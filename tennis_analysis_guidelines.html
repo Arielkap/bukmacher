@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wytyczne dla Analityka Tenisowego</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+        
+        header {
+            background-color: #1e2a3a;
+            padding: 30px;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.2em;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            color: #ff8c00;
+            border-bottom: 2px solid #ff8c00;
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+        
+        h3 {
+            color: #e0e0e0;
+            margin-top: 25px;
+            font-size: 1.3em;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        ul, ol {
+            margin-bottom: 20px;
+            padding-left: 25px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        .section {
+            background-color: #1e2a3a;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        
+        .example {
+            background-color: #2c3e50;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #ff8c00;
+        }
+        
+        .highlight {
+            color: #ff8c00;
+            font-weight: bold;
+        }
+        
+        .warning {
+            background-color: rgba(255, 59, 48, 0.2);
+            border-left: 4px solid #ff3b30;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #2c3e50;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #1e2a3a;
+        }
+        
+        th {
+            background-color: #34495e;
+            color: #ff8c00;
+        }
+        
+        tr:hover {
+            background-color: #34495e;
+        }
+        
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+            padding-top: 20px;
+            border-top: 1px solid #2c3e50;
+        }
+
+        .criteria-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .criteria-table th {
+            background-color: #34495e;
+            color: #fff;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .criteria-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #2c3e50;
+        }
+        
+        .criteria-table tr:nth-child(even) {
+            background-color: rgba(44, 62, 80, 0.5);
+        }
+        
+        .surface {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        
+        .surface-clay {
+            background-color: #d35400;
+            color: white;
+        }
+        
+        .surface-hard {
+            background-color: #2980b9;
+            color: white;
+        }
+        
+        .surface-grass {
+            background-color: #27ae60;
+            color: white;
+        }
+        
+        .surface-carpet {
+            background-color: #8e44ad;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Dodanie paska nawigacyjnego -->
+    <div class="nav-container" style="display: flex; justify-content: center; margin: 20px 0; background-color: #1e2a3a; border-radius: 10px; padding: 10px;">
+        <div class="nav-tabs" style="display: flex; background-color: rgba(255, 255, 255, 0.05); border-radius: 10px; overflow: hidden;">
+            <a href="index.html" class="nav-tab" style="padding: 12px 25px; font-size: 1.1em; font-weight: bold; color: #fff; text-decoration: none; transition: all 0.3s; border-right: 1px solid rgba(255, 255, 255, 0.1);">Strona Główna</a>
+            <a href="predictions.html" class="nav-tab" style="padding: 12px 25px; font-size: 1.1em; font-weight: bold; color: #fff; text-decoration: none; transition: all 0.3s; border-right: 1px solid rgba(255, 255, 255, 0.1);">WTA Charleston</a>
+            <a href="marrakech_atp_qualifications.html" class="nav-tab" style="padding: 12px 25px; font-size: 1.1em; font-weight: bold; color: #fff; text-decoration: none; transition: all 0.3s; border-right: 1px solid rgba(255, 255, 255, 0.1);">ATP Marrakech</a>
+            <a href="tennis_analysis_guidelines.html" class="nav-tab active" style="padding: 12px 25px; font-size: 1.1em; font-weight: bold; color: #fff; text-decoration: none; transition: all 0.3s; background-color: #d35400;">Wytyczne</a>
+        </div>
+    </div>
+    <!-- Koniec paska nawigacyjnego -->
+
+    <div class="container">
+        <header>
+            <h1>Wytyczne dla Analityka Tenisowego</h1>
+            <p>Zasady tworzenia profesjonalnych analiz meczów i prognoz tenisowych</p>
+        </header>
+        
+        <div class="section">
+            <h2>1. Wprowadzenie</h2>
+            <p>Poniższy dokument zawiera kompleksowe wytyczne dla analityków tenisowych, którzy przygotowują prognozy meczów i analizy turniejów. Zastosowanie tych zasad zapewni wysoką jakość, spójność i profesjonalizm w tworzonych materiałach.</p>
+            
+            <h3>Cel analiz tenisowych</h3>
+            <ul>
+                <li>Dostarczanie profesjonalnych prognoz opartych na danych statystycznych i kontekście sportowym</li>
+                <li>Wsparcie dla osób zainteresowanych zakładami bukmacherskimi poprzez rzetelne analizy</li>
+                <li>Informowanie fanów tenisa o czynnikach wpływających na potencjalny wynik meczu</li>
+                <li>Identyfikowanie anomalii w kursach bukmacherskich i potencjalnych manipulacji</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>2. Gromadzenie i analiza danych</h2>
+            
+            <h3>Podstawowe dane o zawodnikach</h3>
+            <p>Dla każdego zawodnika należy uwzględnić następujące informacje:</p>
+            <ul>
+                <li><span class="highlight">Ranking ATP/WTA</span> - aktualna pozycja w rankingu</li>
+                <li><span class="highlight">Narodowość</span> - kraj pochodzenia zawodnika</li>
+                <li><span class="highlight">Wiek</span> - istotny czynnik dla oceny doświadczenia i kondycji fizycznej</li>
+                <li><span class="highlight">Bilans na danej nawierzchni</span> - statystyka wygranych/przegranych na danej nawierzchni</li>
+                <li><span class="highlight">H2H</span> - bezpośrednie pojedynki zawodników w przeszłości</li>
+                <li><span class="highlight">Rozstawienie</span> - informacja o pozycji zawodnika w drabince turniejowej</li>
+                <li><span class="highlight">Aktualna forma</span> - wyniki z ostatnich 5 meczów (W/L)</li>
+            </ul>
+            
+            <h3>Hierarchia kryteriów analizy</h3>
+            <p>Poniższa tabela przedstawia hierarchię czynników wpływających na prognozę, od najważniejszych do mniej istotnych:</p>
+            
+            <table class="criteria-table">
+                <tr>
+                    <th>Priorytet</th>
+                    <th>Kryterium</th>
+                    <th>Waga</th>
+                    <th>Uwagi</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Rozstawienie w turnieju</td>
+                    <td>Bardzo wysoka</td>
+                    <td>Odzwierciedla aktualną formę i pozycję zawodnika w kontekście turnieju</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Aktualna forma (ostatnie 5 meczów)</td>
+                    <td>Bardzo wysoka</td>
+                    <td>Najważniejszy wskaźnik bieżącej dyspozycji</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Ranking ATP/WTA</td>
+                    <td>Wysoka</td>
+                    <td>Ogólny wskaźnik poziomu zawodnika</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Bilans na danej nawierzchni</td>
+                    <td>Wysoka</td>
+                    <td>Kluczowy dla analizy dopasowania stylu gry do warunków</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>H2H (bezpośrednie pojedynki)</td>
+                    <td>Średnia</td>
+                    <td>Istotne, szczególnie jeśli mecze były rozgrywane na tej samej nawierzchni</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Wiek zawodnika</td>
+                    <td>Niska</td>
+                    <td>Wpływa na wytrzymałość, doświadczenie i potencjał rozwoju</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Czynniki specjalne (wsparcie publiczności, dzika karta)</td>
+                    <td>Niska</td>
+                    <td>Uzupełniające, ale mogące wpływać na motywację</td>
+                </tr>
+            </table>
+            
+            <h3>Specyfika nawierzchni</h3>
+            <p>Nawierzchnia jest kluczowym czynnikiem wpływającym na styl gry i wyniki zawodników. Należy uwzględnić specyfikę różnych nawierzchni:</p>
+            
+            <div class="example">
+                <p><span class="surface surface-clay">Ziemna (Clay)</span> - Wolniejsza, wysoka piłka, długie wymiany. Preferują ją zawodnicy o dobrej wytrzymałości, silnym topspinie i cierpliwości w konstruowaniu akcji. Szczególnie dobrze radzą sobie na niej zawodnicy z Hiszpanii, Argentyny i Brazylii.</p>
+                
+                <p><span class="surface surface-hard">Twarda (Hard)</span> - Średnia prędkość, regularny odskok. Nawierzchnia wszechstronna, niepreferująca znacząco żadnego stylu gry. Korzyści mają zawodnicy o zrównoważonym stylu.</p>
+                
+                <p><span class="surface surface-grass">Trawiasta (Grass)</span> - Szybka, niski odskok, krótkie wymiany. Preferują ją zawodnicy o dobrym serwisie, woleju i grze atakującej.</p>
+                
+                <p><span class="surface surface-carpet">Dywanowa (Carpet)</span> - Szybka, regularny odskok. Preferują ją zawodnicy o dynamicznym, agresywnym stylu gry.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>3. Przygotowanie prognozy</h2>
+            
+            <h3>Struktura analizy meczu</h3>
+            <p>Każda analiza meczu powinna zawierać następujące elementy:</p>
+            <ol>
+                <li><span class="highlight">Podstawowe informacje o meczu</span> - data, godzina, runda, nawierzchnia</li>
+                <li><span class="highlight">Profil zawodników</span> - kluczowe statystyki i informacje</li>
+                <li><span class="highlight">Kontekst sportowy</span> - znaczenie meczu, historia rywalizacji</li>
+                <li><span class="highlight">Analiza czynników</span> - interpretacja danych statystycznych i kontekstowych</li>
+                <li><span class="highlight">Prognoza końcowa</span> - wskazanie faworyta i szacowanego prawdopodobieństwa zwycięstwa</li>
+                <li><span class="highlight">Uzasadnienie prognozy</span> - wyjaśnienie powodów stojących za prognozą</li>
+            </ol>
+            
+            <h3>Szacowanie prawdopodobieństwa</h3>
+            <p>Prawdopodobieństwo zwycięstwa powinno być określone procentowo, na podstawie analizy wszystkich czynników:</p>
+            <ul>
+                <li>90-100%: Niemal pewne zwycięstwo</li>
+                <li>75-89%: Zdecydowany faworyt</li>
+                <li>60-74%: Wyraźny faworyt</li>
+                <li>55-59%: Lekki faworyt</li>
+                <li>45-55%: Wyrównane szanse</li>
+                <li>Poniżej 45%: Outsider</li>
+            </ul>
+            
+            <div class="example">
+                <p><strong>Przykładowa prognoza:</strong> "Liu ma znacznie wyższy ranking (#90 vs #165) i lepszy bilans na mączce (58-25 vs 52-32). Choć McNally dobrze wypadła w pierwszej rundzie, jej przeciwniczka poddała mecz, więc trudno ocenić pełną formę. Liu jest prawdopodobnie wyżej rozstawiona w turnieju ze względu na ranking i posiada większe doświadczenie w konfrontacjach z wyżej notowanymi rywalkami. Przewidywany zwycięzca: Liu C. (70%)."</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>4. Monitorowanie kursów bukmacherskich</h2>
+            
+            <h3>Analiza kursów</h3>
+            <p>Należy porównać własne prognozy z kursami bukmacherskimi, aby zidentyfikować potencjalne anomalie:</p>
+            <ul>
+                <li>Procentowe prawdopodobieństwo zwycięstwa wynikające z kursu = (1 / kurs) * 100%</li>
+                <li>Znacząca różnica między własną prognozą a kursem wymaga głębszej analizy</li>
+                <li>Nagłe zmiany kursów mogą wskazywać na informacje niedostępne publicznie</li>
+            </ul>
+            
+            <h3>Identyfikacja anomalii</h3>
+            <p>Potencjalne oznaki manipulacji kursami lub meczami:</p>
+            
+            <div class="warning">
+                <ul>
+                    <li>Duże, skokowe zmiany kursów tuż przed meczami (>50% wartości)</li>
+                    <li>Nielogiczne faworyzowanie zawodników z gorszymi statystykami</li>
+                    <li>Odwrócone kursy na handicapy/sety w stosunku do kursu na wynik końcowy</li>
+                    <li>Nietypowo wysokie wolumeny zakładów na mecze niższej rangi</li>
+                </ul>
+            </div>
+            
+            <h3>Raportowanie podejrzeń</h3>
+            <p>W przypadku wykrycia znaczących anomalii, należy:</p>
+            <ol>
+                <li>Udokumentować zaobserwowane anomalie</li>
+                <li>Oznaczyć mecz jako potencjalnie podejrzany</li>
+                <li>Rekomendować odbiorcom szczególną ostrożność przy obstawianiu</li>
+                <li>Stosować wyraźne ostrzeżenia wizualne w analizie</li>
+            </ol>
+            
+            <div class="example">
+                <p><strong>Przykładowe ostrzeżenie:</strong> "UWAGA: Kursy bukmacherskie znacząco odbiegają od naszych prognoz. Chirico L. (kurs 1.40) vs Rinaldo Persson K. (kurs 2.70) - nasza analiza wskazuje na przewagę Rinaldo Persson (55%). Tak duże rozbieżności mogą sugerować manipulację. Zalecamy wyjątkową ostrożność przy obstawianiu tego meczu."</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>5. Prezentacja i formatowanie analiz</h2>
+            
+            <h3>Struktura wizualna</h3>
+            <p>Analizy powinny być przejrzyste i profesjonalne:</p>
+            <ul>
+                <li>Spójna kolorystyka powiązana z typem nawierzchni (np. pomarańczowy dla mączki)</li>
+                <li>Czytelne karty meczów z wyraźnym podziałem na sekcje</li>
+                <li>Wyróżnienie kluczowych informacji (prawdopodobieństwo, przewidywany zwycięzca)</li>
+                <li>Odpowiednie odstępy i hierarchia informacji</li>
+            </ul>
+            
+            <h3>Język i styl</h3>
+            <p>Komunikacja powinna być:</p>
+            <ul>
+                <li>Rzeczowa i oparta na faktach</li>
+                <li>Wolna od emocjonalnych osądów</li>
+                <li>Precyzyjna w terminologii tenisowej</li>
+                <li>Dostosowana do odbiorcy (unikanie żargonu dla analiz publicznych)</li>
+            </ul>
+            
+            <h3>Aktualizacja prognoz</h3>
+            <p>Po zakończeniu meczów należy:</p>
+            <ul>
+                <li>Uzupełnić wyniki końcowe w formatce analizy</li>
+                <li>Zaktualizować statystyki trafności prognoz</li>
+                <li>Analizować przyczyny ewentualnych nietrafnych prognoz</li>
+                <li>Wykorzystać wnioski przy kolejnych analizach</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>6. Przypadki szczególne i etyka</h2>
+            
+            <h3>Sytuacje wymagające szczególnej uwagi</h3>
+            <ul>
+                <li><span class="highlight">Kontuzje i problemy zdrowotne</span> - jeśli są znane publicznie, muszą być uwzględnione w analizie</li>
+                <li><span class="highlight">Powroty po długiej przerwie</span> - zawodnicy mogą potrzebować czasu na odzyskanie formy</li>
+                <li><span class="highlight">Nietypowe warunki pogodowe</span> - mogą znacząco wpływać na styl gry i szanse zawodników</li>
+                <li><span class="highlight">Mecze "dead rubber"</span> - o nic nieznaczące, mogą cechować się niższym zaangażowaniem</li>
+                <li><span class="highlight">Konflikty interesów</span> - unikanie analizy meczów, gdzie istnieje potencjalny konflikt interesów</li>
+            </ul>
+            
+            <h3>Zasady etyczne</h3>
+            <p>Analityk powinien przestrzegać następujących zasad etycznych:</p>
+            <ol>
+                <li>Rzetelność i obiektywizm - analizy muszą opierać się na faktach i danych</li>
+                <li>Transparentność - jasne prezentowanie metodologii i źródeł danych</li>
+                <li>Odpowiedzialność - świadomość wpływu analiz na decyzje odbiorców</li>
+                <li>Uczciwość - ujawnianie potencjalnych konfliktów interesów</li>
+                <li>Profesjonalizm - zachowanie najwyższych standardów jakości</li>
+            </ol>
+            
+            <h3>Ograniczenia odpowiedzialności</h3>
+            <p>Każda analiza powinna zawierać klauzulę ograniczenia odpowiedzialności:</p>
+            
+            <div class="example">
+                <p>"Analizy mają charakter informacyjny i opierają się na publicznie dostępnych danych. Decyzje dotyczące zakładów bukmacherskich podejmowane są przez czytelników na własną odpowiedzialność. Autor analiz nie ponosi odpowiedzialności za ewentualne straty finansowe wynikające z wykorzystania zawartych informacji."</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Wersja dokumentu: 1.0 | Data: 30.03.2025</p>
+            <p>© 2025 Prognozy Tenisowe</p>
+        </div>
+    </div>
+</body>
+</html> 

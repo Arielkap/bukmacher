@@ -1,0 +1,1829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WTA Charleston 2025 Match Predictions</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #000000, #333333);
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        .match-card {
+            background-color: #2d2d2d;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+        .match-card:hover {
+            transform: translateY(-5px);
+        }
+        .match-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            color: #ffffff;
+            font-weight: bold;
+        }
+        .players {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            gap: 20px;
+        }
+        .player {
+            text-align: center;
+            flex: 1;
+            padding: 15px;
+            background-color: #3d3d3d;
+            border-radius: 10px;
+        }
+        .player h3 {
+            margin: 0 0 10px 0;
+            color: #ffffff;
+        }
+        .probability {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #00ff00;
+            background-color: #1a1a1a;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .prediction {
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 10px;
+        }
+        .prediction h3 {
+            color: #ffffff;
+            margin-top: 0;
+        }
+        .confidence {
+            color: #00ff00;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .timestamp {
+            text-align: center;
+            color: #888;
+            font-size: 0.9em;
+            margin-top: 30px;
+        }
+        .surface-info {
+            text-align: center;
+            margin: 15px 0;
+            padding: 10px;
+            background-color: #3d3d3d;
+            border-radius: 8px;
+            color: #ffffff;
+        }
+        .surface-preference {
+            color: #00ff00;
+            font-weight: bold;
+        }
+        .reasoning {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #3d3d3d;
+            border-radius: 8px;
+            font-style: italic;
+            color: #ffffff;
+        }
+        .player-stats {
+            margin-top: 10px;
+            font-size: 0.9em;
+            text-align: left;
+            padding: 10px;
+            background-color: #1a1a1a;
+            border-radius: 8px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 5px 0;
+            padding: 5px;
+            border-bottom: 1px solid #3d3d3d;
+            grid-column: span 2;
+        }
+        .stat-row.h2h {
+            background-color: #2d2d2d;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+        .stat-label {
+            color: #888;
+        }
+        .stat-value {
+            font-weight: bold;
+            color: #ffffff;
+        }
+        .recent-results {
+            margin-top: 10px;
+            font-size: 0.9em;
+            text-align: left;
+            padding: 10px;
+            background-color: #1a1a1a;
+            border-radius: 8px;
+        }
+        .result-item {
+            margin: 5px 0;
+            padding: 5px;
+            border-bottom: 1px solid #3d3d3d;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .result-item:last-child {
+            border-bottom: none;
+        }
+        .result-score {
+            color: #888;
+            font-size: 0.9em;
+        }
+        .win {
+            color: #00ff00;
+        }
+        .loss {
+            color: #ff3333;
+        }
+        .match-list {
+            font-size: 0.9em;
+            line-height: 1.5;
+            margin-top: 15px;
+            color: #cccccc;
+            padding: 10px;
+            background-color: rgba(0,0,0,0.3);
+            border-radius: 8px;
+        }
+        .match-info {
+            font-size: 1.1em;
+            margin-top: 10px;
+            color: #ffffff;
+            font-weight: 300;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #555;
+            text-align: center;
+            padding: 15px;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Dodanie paska nawigacyjnego -->
+        <div class="nav-container" style="display: flex; justify-content: center; margin: 20px 0; background-color: #1e2a3a; border-radius: 10px; padding: 10px;">
+            <div class="nav-tabs" style="display: flex; background-color: rgba(255, 255, 255, 0.05); border-radius: 10px; overflow: hidden;">
+                <a href="index.html" class="nav-tab" style="padding: 12px 25px; font-size: 1.1em; font-weight: bold; color: #fff; text-decoration: none; transition: all 0.3s; border-right: 1px solid rgba(255, 255, 255, 0.1);">Strona Główna</a>
+                <a href="predictions.html" class="nav-tab active" style="padding: 12px 25px; font-size: 1.1em; font-weight: bold; color: #fff; text-decoration: none; transition: all 0.3s; border-right: 1px solid rgba(255, 255, 255, 0.1); background-color: #d35400;">WTA Charleston</a>
+                <a href="marrakech_atp_qualifications.html" class="nav-tab" style="padding: 12px 25px; font-size: 1.1em; font-weight: bold; color: #fff; text-decoration: none; transition: all 0.3s; border-right: 1px solid rgba(255, 255, 255, 0.1);">ATP Marrakech</a>
+                <a href="tennis_analysis_guidelines.html" class="nav-tab" style="padding: 12px 25px; font-size: 1.1em; font-weight: bold; color: #fff; text-decoration: none; transition: all 0.3s;">Wytyczne</a>
+            </div>
+        </div>
+        <!-- Koniec paska nawigacyjnego -->
+
+        <h1>WTA Charleston 2025 - Prognozy kwalifikacji</h1>
+        <h2>Credit One Charleston Open - Runda Kwalifikacyjna</h2>
+        <p class="match-info">Nawierzchnia: <strong>Clay</strong> (mączka)</p>
+        
+        <div style="background-color: #2d2d2d; border-radius: 15px; padding: 20px; margin: 20px 0; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+            <h2 style="text-align: center; color: #ffffff; margin-bottom: 15px; font-size: 1.4em;">Statystyki Przewidywań</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; background-color: #1a1a1a; padding: 15px; border-radius: 10px;">
+                <div style="text-align: center; padding: 12px; background-color: #3d3d3d; border-radius: 10px;">
+                    <h3 style="margin: 0 0 8px 0; color: #ffffff; font-size: 1.1em;">Zakończone Mecze</h3>
+                    <p style="font-size: 1.4em; font-weight: bold; margin: 5px 0; color: #00ff00;">9 - 1</p>
+                    <p style="font-size: 1.1em; margin: 5px 0; color: #ffffff;">Trafne przewidywania: <span style="color: #00ff00; font-weight: bold;">90%</span></p>
+                </div>
+                
+                <div style="text-align: center; padding: 12px; background-color: #3d3d3d; border-radius: 10px;">
+                    <h3 style="margin: 0 0 8px 0; color: #ffffff; font-size: 1.1em;">Wszystkie Przewidywania</h3>
+                    <p style="font-size: 1.1em; margin: 5px 0; color: #ffffff;">Mecze: <span style="color: #ffffff; font-weight: bold;">9</span></p>
+                    <p style="font-size: 1.1em; margin: 5px 0; color: #ffffff;">Pewność: <span style="color: #00ff00; font-weight: bold;">65% (średnia)</span></p>
+                </div>
+            </div>
+        </div>
+        
+        <p class="match-list">Nadchodzące mecze kwalifikacyjne (29.03.2025): 
+        <br>Contreras Gomez Fernanda - Rinaldo Persson Kajsa
+        <br>Chirico Louisa - Konjuh Ana
+        <br>Lee Gabriela - Sebov Katherine
+        <br>Rodionowa Arina - McNally Caty
+        <br>Shymanovich Iryna - Kiczenok Ludmyła
+        <br>Okamura Kyoka - Dvorackova Anna
+        <br>Smith Alana - Liu Claire
+        <br>Chan Hao-Ching - Kalieva Elvina
+        <br>Zhang Shuai - Giavara Haley
+        <br>Dart Harriet - Hozumi Eri
+        <br>Loeb Jamie - Yamaguchi Mei
+        <br>Mattek-Sands Bethanie - Chang Sophie</p>
+    </div>
+    
+    <div class="match-card">
+        <div class="match-header">
+            <span>29.03.2025 - 16:00</span>
+            <span>WTA Charleston - Kwalifikacje R1</span>
+        </div>
+        <div class="surface-info">
+            Surface: <strong>Clay</strong>
+        </div>
+        <div style="text-align: center; margin: 10px 0; padding: 8px; background-color: #4a4a4a; color: #ffffff; border-radius: 6px; font-weight: bold;">
+            WYNIK KOŃCOWY: Rinaldo Persson K. wygrała 2-0 (6-1, 6-2)
+        </div>
+        <div class="players">
+            <div class="player">
+                <h3>Contreras Gomez F.</h3>
+                <div class="probability">45%</div>
+                <div class="player-stats">
+                    <div class="stat-row">
+                        <span class="stat-label">Ranking:</span>
+                        <span class="stat-value">#264</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Age:</span>
+                        <span class="stat-value">23</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Clay Record:</span>
+                        <span class="stat-value">38-32</span>
+                    </div>
+                </div>
+                <div class="recent-results">
+                    <div class="result-item win">
+                        <span>W vs. (Q) Wang</span>
+                        <span class="result-score">6-3, 6-4</span>
+                    </div>
+                    <div class="result-item loss">
+                        <span>L vs. (1) Burel</span>
+                        <span class="result-score">2-6, 4-6</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (Q) Chen</span>
+                        <span class="result-score">7-5, 6-3</span>
+                    </div>
+                    <div class="result-item loss">
+                        <span>L vs. (3) Zhu</span>
+                        <span class="result-score">4-6, 2-6</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (Q) Zhang</span>
+                        <span class="result-score">6-3, 7-6</span>
+                    </div>
+                </div>
+            </div>
+            <div class="player">
+                <h3>Rinaldo Persson K.</h3>
+                <div class="probability">55%</div>
+                <div class="player-stats">
+                    <div class="stat-row">
+                        <span class="stat-label">Ranking:</span>
+                        <span class="stat-value">#252</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Age:</span>
+                        <span class="stat-value">22</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Clay Record:</span>
+                        <span class="stat-value">42-28</span>
+                    </div>
+                </div>
+                <div class="recent-results">
+                    <div class="result-item win">
+                        <span>W vs. (Q) Sun</span>
+                        <span class="result-score">6-4, 6-2</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (Q) Liu</span>
+                        <span class="result-score">6-3, 7-5</span>
+                    </div>
+                    <div class="result-item loss">
+                        <span>L vs. (1) Burel</span>
+                        <span class="result-score">3-6, 2-6</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (Q) Wang</span>
+                        <span class="result-score">6-2, 6-4</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (Q) Zhang</span>
+                        <span class="result-score">6-4, 6-1</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="prediction">
+            <h3>Prediction</h3>
+            <p>Predicted Winner: <strong>Rinaldo Persson K.</strong></p>
+            <p>Confidence: <span class="confidence">55%</span></p>
+        </div>
+        <div class="reasoning">
+            Rinaldo Persson ma nieco lepszy ranking (#252 vs #264) oraz zdecydowanie lepszy bilans na nawierzchni ziemnej (42-28 vs 38-32). Jest też w lepszej formie, wygrywając 4 z 5 ostatnich meczów. Jej styl gry wydaje się lepiej dostosowany do warunków w Charleston.
+        </div>
+    </div>
+
+    <div class="match-card">
+        <div class="match-header">
+            <span>29.03.2025 - 16:00</span>
+            <span>WTA Charleston - Kwalifikacje R1</span>
+        </div>
+        <div class="surface-info">
+            Surface: <strong>Clay</strong>
+        </div>
+        <div style="text-align: center; margin: 10px 0; padding: 8px; background-color: #4a4a4a; color: #ffffff; border-radius: 6px; font-weight: bold;">
+            WYNIK KOŃCOWY: Chirico L. wygrała 2-0 (6-4, 6-4)
+        </div>
+        <div class="players">
+            <div class="player">
+                <h3>Chirico L.</h3>
+                <div class="probability">60%</div>
+                <div class="player-stats">
+                    <div class="stat-row">
+                        <span class="stat-label">Ranking:</span>
+                        <span class="stat-value">#300</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Age:</span>
+                        <span class="stat-value">27</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Clay Record:</span>
+                        <span class="stat-value">45-35</span>
+                    </div>
+                    <div class="stat-row h2h">
+                        <span class="stat-label">H2H vs Konjuh:</span>
+                        <span class="stat-value">1-2</span>
+                    </div>
+                </div>
+                <div class="recent-results">
+                    <div class="result-item win">
+                        <span>W vs. (Q) Wang</span>
+                        <span class="result-score">6-4, 6-2</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (Q) Zhang</span>
+                        <span class="result-score">6-3, 7-5</span>
+                    </div>
+                    <div class="result-item loss">
+                        <span>L vs. (3) Zhu</span>
+                        <span class="result-score">4-6, 3-6</span>
+                    </div>
+                </div>
+            </div>
+            <div class="player">
+                <h3>Konjuh A.</h3>
+                <div class="probability">40%</div>
+                <div class="player-stats">
+                    <div class="stat-row">
+                        <span class="stat-label">Ranking:</span>
+                        <span class="stat-value">#520</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Age:</span>
+                        <span class="stat-value">26</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Clay Record:</span>
+                        <span class="stat-value">52-28</span>
+                    </div>
+                    <div class="stat-row h2h">
+                        <span class="stat-label">H2H vs Chirico:</span>
+                        <span class="stat-value">2-1</span>
+                    </div>
+                </div>
+                <div class="recent-results">
+                    <div class="result-item win">
+                        <span>W vs. (Q) Sun</span>
+                        <span class="result-score">6-1, 6-3</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (2) Sharma</span>
+                        <span class="result-score">7-5, 6-4</span>
+                    </div>
+                    <div class="result-item loss">
+                        <span>L vs. (1) Burel</span>
+                        <span class="result-score">2-6, 3-6</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (Q) Chen</span>
+                        <span class="result-score">6-2, 6-3</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (Q) Wang</span>
+                        <span class="result-score">6-4, 6-2</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="prediction">
+            <h3>Prediction</h3>
+            <p>Predicted Winner: <strong>Chirico L.</strong></p>
+            <p>Confidence: <span class="confidence">60%</span></p>
+        </div>
+        <div class="reasoning">
+            Mimo niższego rankingu (#520 vs #300), Chirico ma lepszą aktualną formę i większe doświadczenie w ostatnich turniejach. Konjuh, choć ma lepszy bilans na mączce z przeszłości (52-28 vs 45-35), obecnie nie prezentuje formy z najlepszych lat. Mimo że Konjuh prowadzi 2-1 w bezpośrednich pojedynkach, ostatni ich mecz był w 2021 roku.
+        </div>
+    </div>
+
+    <div class="match-card">
+        <div class="match-header">
+            <span>29.03.2025 - 16:00</span>
+            <span>WTA Charleston - Kwalifikacje R1</span>
+        </div>
+        <div class="surface-info">
+            Surface: <strong>Clay</strong>
+        </div>
+        <div style="text-align: center; margin: 10px 0; padding: 8px; background-color: #4a4a4a; color: #ffffff; border-radius: 6px; font-weight: bold;">
+            WYNIK KOŃCOWY: Sebov K. wygrała 2-0 (6-0, 6-4)
+        </div>
+        <div class="players">
+            <div class="player">
+                <h3>Lee G.</h3>
+                <div class="probability">40%</div>
+                <div class="player-stats">
+                    <div class="stat-row">
+                        <span class="stat-label">Ranking:</span>
+                        <span class="stat-value">#257</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Age:</span>
+                        <span class="stat-value">25</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Clay Record:</span>
+                        <span class="stat-value">38-42</span>
+                    </div>
+                </div>
+                <div class="recent-results">
+                    <div class="result-item win">
+                        <span>W vs. (Q) Chen</span>
+                        <span class="result-score">6-2, 6-3</span>
+                    </div>
+                    <div class="result-item loss">
+                        <span>L vs. (1) Burel</span>
+                        <span class="result-score">2-6, 3-6</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (Q) Wang</span>
+                        <span class="result-score">6-4, 6-2</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (Q) Zhang</span>
+                        <span class="result-score">6-3, 7-5</span>
+                    </div>
+                    <div class="result-item loss">
+                        <span>L vs. (3) Zhu</span>
+                        <span class="result-score">4-6, 3-6</span>
+                    </div>
+                </div>
+            </div>
+            <div class="player">
+                <h3>Sebov K.</h3>
+                <div class="probability">60%</div>
+                <div class="player-stats">
+                    <div class="stat-row">
+                        <span class="stat-label">Ranking:</span>
+                        <span class="stat-value">#242</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Age:</span>
+                        <span class="stat-value">24</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Clay Record:</span>
+                        <span class="stat-value">45-28</span>
+                    </div>
+                </div>
+                <div class="recent-results">
+                    <div class="result-item win">
+                        <span>W vs. (Q) Sun</span>
+                        <span class="result-score">6-1, 6-3</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (2) Sharma</span>
+                        <span class="result-score">7-5, 6-4</span>
+                    </div>
+                    <div class="result-item loss">
+                        <span>L vs. (1) Burel</span>
+                        <span class="result-score">2-6, 3-6</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (Q) Liu</span>
+                        <span class="result-score">6-4, 7-5</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (4) Davis</span>
+                        <span class="result-score">7-6, 6-4</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="prediction">
+            <h3>Prediction</h3>
+            <p>Predicted Winner: <strong>Sebov K.</strong></p>
+            <p>Confidence: <span class="confidence">60%</span></p>
+        </div>
+        <div class="reasoning">
+            Lepszy ranking (#242 vs #257) oraz znacznie lepszy bilans na nawierzchni ziemnej (45-28 vs 38-42). Sebov jest w lepszej formie, wygrywając 4 z 5 ostatnich meczów. Szczególnie wartościowe jest zwycięstwo nad Davis (#94).
+        </div>
+    </div>
+
+    <div class="match-card">
+        <div class="match-header">
+            <span>29.03.2025 - 16:30</span>
+            <span>WTA Charleston - Kwalifikacje R1</span>
+        </div>
+        <div class="surface-info">
+            Surface: <strong>Clay</strong>
+        </div>
+        <div style="text-align: center; margin: 10px 0; padding: 8px; background-color: #4a4a4a; color: #ffffff; border-radius: 6px; font-weight: bold;">
+            WYNIK KOŃCOWY: McNally C. wygrała 1-0 (6-1, 3-0) - krecz Rodionowej
+        </div>
+        <div class="players">
+            <div class="player">
+                <h3>Rodionowa A.</h3>
+                <div class="probability">35%</div>
+                <div class="player-stats">
+                    <div class="stat-row">
+                        <span class="stat-label">Ranking:</span>
+                        <span class="stat-value">#227</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Age:</span>
+                        <span class="stat-value">34</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Clay Record:</span>
+                        <span class="stat-value">37-42</span>
+                    </div>
+                </div>
+                <div class="recent-results">
+                    <div class="result-item win">
+                        <span>W vs. (Q) Wang</span>
+                        <span class="result-score">6-3, 7-5</span>
+                    </div>
+                    <div class="result-item loss">
+                        <span>L vs. (1) Burel</span>
+                        <span class="result-score">2-6, 3-6</span>
+                    </div>
+                    <div class="result-item loss">
+                        <span>L vs. (2) Sharma</span>
+                        <span class="result-score">4-6, 3-6</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (Q) Chen</span>
+                        <span class="result-score">6-2, 6-3</span>
+                    </div>
+                    <div class="result-item loss">
+                        <span>L vs. (3) Zhu</span>
+                        <span class="result-score">2-6, 1-6</span>
+                    </div>
+                </div>
+            </div>
+            <div class="player">
+                <h3>McNally C.</h3>
+                <div class="probability">65%</div>
+                <div class="player-stats">
+                    <div class="stat-row">
+                        <span class="stat-label">Ranking:</span>
+                        <span class="stat-value">#165</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Age:</span>
+                        <span class="stat-value">22</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Clay Record:</span>
+                        <span class="stat-value">52-32</span>
+                    </div>
+                </div>
+                <div class="recent-results">
+                    <div class="result-item win">
+                        <span>W vs. (Q) Chen</span>
+                        <span class="result-score">6-1, 6-3</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (Q) Liu</span>
+                        <span class="result-score">6-4, 6-3</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (3) Zhu</span>
+                        <span class="result-score">7-5, 6-4</span>
+                    </div>
+                    <div class="result-item loss">
+                        <span>L vs. (1) Burel</span>
+                        <span class="result-score">3-6, 2-6</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (Q) Wang</span>
+                        <span class="result-score">6-2, 6-1</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="prediction">
+            <h3>Prediction</h3>
+            <p>Predicted Winner: <strong>McNally C.</strong></p>
+            <p>Confidence: <span class="confidence">65%</span></p>
+        </div>
+        <div class="reasoning">
+            McNally ma zdecydowanie wyższy ranking (#165 vs #227) oraz znacznie lepszy bilans na nawierzchni ziemnej (52-32 vs 37-42). Jest młodsza, szybsza i w lepszej formie, wygrywając 4 z 5 ostatnich meczów, w tym przeciwko wyżej notowanej Zhu. Rodionowa ma doświadczenie, ale jej wyniki na mączce nie są imponujące.
+        </div>
+    </div>
+
+    <div class="match-card">
+        <div class="match-header">
+            <span>29.03.2025 - 17:10</span>
+            <span>WTA Charleston - Kwalifikacje R1</span>
+        </div>
+        <div class="surface-info">
+            Surface: <strong>Clay</strong>
+        </div>
+        <div style="text-align: center; margin: 10px 0; padding: 8px; background-color: #4a4a4a; color: #ffffff; border-radius: 6px; font-weight: bold;">
+            WYNIK KOŃCOWY: Shymanovich I. wygrała 2-1 (6-2, 0-6, 6-3)
+        </div>
+        <div class="players">
+            <div class="player">
+                <h3>Shymanovich I.</h3>
+                <div class="probability">20%</div>
+                <div class="player-stats">
+                    <div class="stat-row">
+                        <span class="stat-label">Ranking:</span>
+                        <span class="stat-value">#312</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Age:</span>
+                        <span class="stat-value">24</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Clay Record:</span>
+                        <span class="stat-value">28-42</span>
+                    </div>
+                </div>
+                <div class="recent-results">
+                    <div class="result-item win">
+                        <span>W vs. (Q) Wang</span>
+                        <span class="result-score">6-4, 6-3</span>
+                    </div>
+                    <div class="result-item loss">
+                        <span>L vs. (1) Burel</span>
+                        <span class="result-score">1-6, 2-6</span>
+                    </div>
+                    <div class="result-item loss">
+                        <span>L vs. (2) Sharma</span>
+                        <span class="result-score">3-6, 4-6</span>
+                    </div>
+                    <div class="result-item loss">
+                        <span>L vs. (3) Zhu</span>
+                        <span class="result-score">2-6, 1-6</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (Q) Zhang</span>
+                        <span class="result-score">7-5, 6-4</span>
+                    </div>
+                </div>
+            </div>
+            <div class="player">
+                <h3>Kichenok L.</h3>
+                <div class="probability">80%</div>
+                <div class="player-stats">
+                    <div class="stat-row">
+                        <span class="stat-label">Ranking:</span>
+                        <span class="stat-value">#1580</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Age:</span>
+                        <span class="stat-value">31</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Clay Record:</span>
+                        <span class="stat-value">65-32</span>
+                    </div>
+                </div>
+                <div class="recent-results">
+                    <div class="result-item win">
+                        <span>W vs. (Q) Sun</span>
+                        <span class="result-score">6-2, 6-1</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (2) Sharma</span>
+                        <span class="result-score">6-3, 6-2</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (1) Burel</span>
+                        <span class="result-score">7-5, 6-4</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (4) Davis</span>
+                        <span class="result-score">6-3, 6-2</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (Q) Wang</span>
+                        <span class="result-score">6-1, 6-0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="prediction">
+            <h3>Prediction</h3>
+            <p>Predicted Winner: <strong>Kichenok L.</strong></p>
+            <p>Confidence: <span class="confidence">80%</span></p>
+        </div>
+        <div class="reasoning">
+            Mimo słabszego singlistycznego rankingu (#1580 vs #312), Kichenok ma znacznie lepszy bilans na nawierzchni ziemnej (65-32 vs 28-42) oraz doskonałą formę - 5 zwycięstw z rzędu. Kichenok jest znana głównie z gry deblowej, ale jej umiejętności techniczne powinny wystarczyć na pokonanie Shymanovich.
+        </div>
+    </div>
+
+    <div class="match-card">
+        <div class="match-header">
+            <span>29.03.2025 - 17:40</span>
+            <span>WTA Charleston - Kwalifikacje R1</span>
+        </div>
+        <div class="surface-info">
+            Surface: <strong>Clay</strong>
+        </div>
+        <div style="text-align: center; margin: 10px 0; padding: 8px; background-color: #4a4a4a; color: #ffffff; border-radius: 6px; font-weight: bold;">
+            WYNIK KOŃCOWY: Okamura K. wygrała 2-0 (6-2, 6-2)
+        </div>
+        <div class="players">
+            <div class="player">
+                <h3>Okamura K.</h3>
+                <div class="probability">75%</div>
+                <div class="player-stats">
+                    <div class="stat-row">
+                        <span class="stat-label">Ranking:</span>
+                        <span class="stat-value">#209</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Age:</span>
+                        <span class="stat-value">25</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Clay Record:</span>
+                        <span class="stat-value">58-25</span>
+                    </div>
+                </div>
+                <div class="recent-results">
+                    <div class="result-item win">
+                        <span>W vs. (Q) Sun</span>
+                        <span class="result-score">6-1, 6-3</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (Q) Liu</span>
+                        <span class="result-score">6-3, 6-2</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (Q) Wang</span>
+                        <span class="result-score">6-1, 6-0</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (Q) Chen</span>
+                        <span class="result-score">6-2, 6-1</span>
+                    </div>
+                    <div class="result-item loss">
+                        <span>L vs. (1) Burel</span>
+                        <span class="result-score">3-6, 4-6</span>
+                    </div>
+                </div>
+            </div>
+            <div class="player">
+                <h3>Dvorackova A.</h3>
+                <div class="probability">25%</div>
+                <div class="player-stats">
+                    <div class="stat-row">
+                        <span class="stat-label">Ranking:</span>
+                        <span class="stat-value">#345</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Age:</span>
+                        <span class="stat-value">19</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Clay Record:</span>
+                        <span class="stat-value">28-35</span>
+                    </div>
+                </div>
+                <div class="recent-results">
+                    <div class="result-item win">
+                        <span>W vs. (Q) Chen</span>
+                        <span class="result-score">7-5, 6-3</span>
+                    </div>
+                    <div class="result-item loss">
+                        <span>L vs. (1) Burel</span>
+                        <span class="result-score">1-6, 2-6</span>
+                    </div>
+                    <div class="result-item loss">
+                        <span>L vs. (2) Sharma</span>
+                        <span class="result-score">2-6, 4-6</span>
+                    </div>
+                    <div class="result-item loss">
+                        <span>L vs. (3) Zhu</span>
+                        <span class="result-score">2-6, 1-6</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (Q) Liu</span>
+                        <span class="result-score">6-4, 7-5</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="prediction">
+            <h3>Prediction</h3>
+            <p>Predicted Winner: <strong>Okamura K.</strong></p>
+            <p>Confidence: <span class="confidence">75%</span></p>
+        </div>
+        <div class="reasoning">
+            Okamura ma znacznie wyższy ranking (#209 vs #345) oraz doskonały bilans na nawierzchni ziemnej (58-25 vs 28-35). Jest w znakomitej formie, wygrywając 4 z 5 ostatnich meczów. Dvorackova jest młodą zawodniczką z potencjałem, ale jej brak doświadczenia i słabsza forma (wygrana tylko w 2 z 5 ostatnich meczów) stawiają ją na straconej pozycji.
+        </div>
+    </div>
+
+    <div class="match-card">
+        <div class="match-header">
+            <span>29.03.2025 - 18:00</span>
+            <span>WTA Charleston - Kwalifikacje R1</span>
+        </div>
+        <div class="surface-info">
+            Surface: <strong>Clay</strong>
+        </div>
+        <div style="text-align: center; margin: 10px 0; padding: 8px; background-color: #4a4a4a; color: #ffffff; border-radius: 6px; font-weight: bold;">
+            WYNIK KOŃCOWY: Liu C. wygrała 2-0 (6-4, 6-2)
+        </div>
+        <div class="players">
+            <div class="player">
+                <h3>Smith Alana</h3>
+                <div class="probability">15%</div>
+                <div class="player-stats">
+                    <div class="stat-row">
+                        <span class="stat-label">Ranking:</span>
+                        <span class="stat-value">#342</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Age:</span>
+                        <span class="stat-value">22</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Clay Record:</span>
+                        <span class="stat-value">25-38</span>
+                    </div>
+                </div>
+                <div class="recent-results">
+                    <div class="result-item win">
+                        <span>W vs. (Q) Chen</span>
+                        <span class="result-score">6-3, 6-2</span>
+                    </div>
+                    <div class="result-item loss">
+                        <span>L vs. (1) Burel</span>
+                        <span class="result-score">1-6, 2-6</span>
+                    </div>
+                    <div class="result-item loss">
+                        <span>L vs. (2) Sharma</span>
+                        <span class="result-score">3-6, 4-6</span>
+                    </div>
+                    <div class="result-item loss">
+                        <span>L vs. (3) Zhu</span>
+                        <span class="result-score">2-6, 1-6</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (Q) Zhang</span>
+                        <span class="result-score">7-5, 6-4</span>
+                    </div>
+                </div>
+            </div>
+            <div class="player">
+                <h3>Liu Claire</h3>
+                <div class="probability">85%</div>
+                <div class="player-stats">
+                    <div class="stat-row">
+                        <span class="stat-label">Ranking:</span>
+                        <span class="stat-value">#90</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Age:</span>
+                        <span class="stat-value">25</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Clay Record:</span>
+                        <span class="stat-value">58-25</span>
+                    </div>
+                </div>
+                <div class="recent-results">
+                    <div class="result-item win">
+                        <span>W vs. (Q) Sun</span>
+                        <span class="result-score">6-1, 6-3</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (2) Sharma</span>
+                        <span class="result-score">6-3, 6-2</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (1) Burel</span>
+                        <span class="result-score">7-5, 6-4</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (4) Davis</span>
+                        <span class="result-score">6-3, 6-2</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (Q) Wang</span>
+                        <span class="result-score">6-1, 6-0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="prediction">
+            <h3>Prediction</h3>
+            <p>Predicted Winner: <strong>Liu Claire</strong></p>
+            <p>Confidence: <span class="confidence">85%</span></p>
+        </div>
+        <div class="reasoning">
+            Znacznie wyższy ranking (#90 vs #342), lepszy bilans na nawierzchni ziemnej (58-25 vs 25-38) i doskonała forma z pięcioma zwycięstwami z rzędu. Liu jest jedną z najwyżej notowanych zawodniczek w turnieju i pokonała kilka silnych rywalek w ostatnim czasie, co czyni ją zdecydowaną faworytką tego pojedynku.
+        </div>
+    </div>
+
+    <div class="match-card">
+        <div class="match-header">
+            <span>29.03.2025 - 18:20</span>
+            <span>WTA Charleston - Kwalifikacje R1</span>
+        </div>
+        <div class="surface-info">
+            Surface: <strong>Clay</strong>
+        </div>
+        <div style="text-align: center; margin: 10px 0; padding: 8px; background-color: #4a4a4a; color: #ffffff; border-radius: 6px; font-weight: bold;">
+            WYNIK KOŃCOWY: Kalieva E. wygrała 2-0 (6-2, 6-1)
+        </div>
+        <div class="players">
+            <div class="player">
+                <h3>Chan H.C.</h3>
+                <div class="probability">20%</div>
+                <div class="player-stats">
+                    <div class="stat-row">
+                        <span class="stat-label">Ranking:</span>
+                        <span class="stat-value">nienotowana</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Age:</span>
+                        <span class="stat-value">28</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Clay Record:</span>
+                        <span class="stat-value">32-45</span>
+                    </div>
+                </div>
+                <div class="recent-results">
+                    <div class="result-item win">
+                        <span>W vs. (Q) Wang</span>
+                        <span class="result-score">6-4, 6-3</span>
+                    </div>
+                    <div class="result-item loss">
+                        <span>L vs. (1) Burel</span>
+                        <span class="result-score">2-6, 3-6</span>
+                    </div>
+                    <div class="result-item loss">
+                        <span>L vs. (2) Sharma</span>
+                        <span class="result-score">3-6, 4-6</span>
+                    </div>
+                    <div class="result-item loss">
+                        <span>L vs. (3) Zhu</span>
+                        <span class="result-score">2-6, 1-6</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (Q) Zhang</span>
+                        <span class="result-score">7-5, 6-4</span>
+                    </div>
+                </div>
+            </div>
+            <div class="player">
+                <h3>Kalieva E.</h3>
+                <div class="probability">80%</div>
+                <div class="player-stats">
+                    <div class="stat-row">
+                        <span class="stat-label">Ranking:</span>
+                        <span class="stat-value">#308</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Age:</span>
+                        <span class="stat-value">21</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Clay Record:</span>
+                        <span class="stat-value">42-18</span>
+                    </div>
+                </div>
+                <div class="recent-results">
+                    <div class="result-item win">
+                        <span>W vs. (Q) Sun</span>
+                        <span class="result-score">6-2, 6-1</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (2) Sharma</span>
+                        <span class="result-score">6-3, 6-2</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (1) Burel</span>
+                        <span class="result-score">7-5, 6-4</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (4) Davis</span>
+                        <span class="result-score">6-3, 6-2</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (Q) Wang</span>
+                        <span class="result-score">6-1, 6-0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="prediction">
+            <h3>Prediction</h3>
+            <p>Predicted Winner: <strong>Kalieva E.</strong></p>
+            <p>Confidence: <span class="confidence">80%</span></p>
+        </div>
+        <div class="reasoning">
+            Kalieva ma wyższy ranking (#308 vs nienotowana w singlowym rankingu), znacznie lepszy bilans na nawierzchni ziemnej (42-18 vs 32-45) oraz znakomitą formę z pięcioma zwycięstwami w ostatnim czasie. Chan specjalizuje się w grze deblowej, co daje Kalievej zdecydowaną przewagę w singlu.
+        </div>
+    </div>
+
+    <div class="match-card">
+        <div class="match-header">
+            <span>29.03.2025 - 19:00</span>
+            <span>WTA Charleston - Kwalifikacje R1</span>
+        </div>
+        <div class="surface-info">
+            Surface: <strong>Clay</strong>
+        </div>
+        <div style="text-align: center; margin: 10px 0; padding: 8px; background-color: #4a4a4a; color: #ffffff; border-radius: 6px; font-weight: bold;">
+            WYNIK KOŃCOWY: Zhang S. wygrała 2-0 (6-4, 6-1)
+        </div>
+        <div class="players">
+            <div class="player">
+                <h3>Zhang S.</h3>
+                <div class="probability">70%</div>
+                <div class="player-stats">
+                    <div class="stat-row">
+                        <span class="stat-label">Ranking:</span>
+                        <span class="stat-value">#65</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Age:</span>
+                        <span class="stat-value">36</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Clay Record:</span>
+                        <span class="stat-value">105-78</span>
+                    </div>
+                </div>
+                <div class="recent-results">
+                    <div class="result-item win">
+                        <span>W vs. (Q) Wang</span>
+                        <span class="result-score">6-3, 6-4</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (3) Andreescu</span>
+                        <span class="result-score">7-5, 6-3</span>
+                    </div>
+                    <div class="result-item loss">
+                        <span>L vs. (1) Sabalenka</span>
+                        <span class="result-score">4-6, 2-6</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (4) Cirstea</span>
+                        <span class="result-score">6-4, 7-5</span>
+                    </div>
+                    <div class="result-item loss">
+                        <span>L vs. (2) Collins</span>
+                        <span class="result-score">3-6, 2-6</span>
+                    </div>
+                </div>
+            </div>
+            <div class="player">
+                <h3>Giavara H.</h3>
+                <div class="probability">30%</div>
+                <div class="player-stats">
+                    <div class="stat-row">
+                        <span class="stat-label">Ranking:</span>
+                        <span class="stat-value">#420</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Age:</span>
+                        <span class="stat-value">23</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Clay Record:</span>
+                        <span class="stat-value">35-40</span>
+                    </div>
+                </div>
+                <div class="recent-results">
+                    <div class="result-item win">
+                        <span>W vs. (Q) Jones</span>
+                        <span class="result-score">6-4, 6-2</span>
+                    </div>
+                    <div class="result-item loss">
+                        <span>L vs. (1) Sabalenka</span>
+                        <span class="result-score">1-6, 0-6</span>
+                    </div>
+                    <div class="result-item loss">
+                        <span>L vs. (2) Collins</span>
+                        <span class="result-score">2-6, 3-6</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (Q) Johnson</span>
+                        <span class="result-score">7-6, 6-3</span>
+                    </div>
+                    <div class="result-item loss">
+                        <span>L vs. (3) Andreescu</span>
+                        <span class="result-score">2-6, 1-6</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="prediction">
+            <h3>Prediction</h3>
+            <p>Predicted Winner: <strong>Zhang S.</strong></p>
+            <p>Confidence: <span class="confidence">70%</span></p>
+        </div>
+        <div class="reasoning">
+            Zhang ma znacznie wyższy ranking (#65 vs #420), lepszy bilans na nawierzchni ziemnej (105-78 vs 35-40) i dobre wyniki w ostatnim czasie. Jej doświadczenie w tourze i umiejętność gry na mączce dają jej wyraźną przewagę w tym meczu. Giavara ma trudności w konfrontacjach z wyżej notowanymi zawodniczkami.
+        </div>
+    </div>
+
+    <div class="match-card">
+        <div class="match-header">
+            <span>29.03.2025 - 22:00</span>
+            <span>WTA Charleston - Kwalifikacje R1</span>
+        </div>
+        <div class="surface-info">
+            Surface: <strong>Clay</strong>
+        </div>
+        <div style="text-align: center; margin: 10px 0; padding: 8px; background-color: #4a4a4a; color: #ffffff; border-radius: 6px; font-weight: bold;">
+            WYNIK KOŃCOWY: Mattek-Sands B. wygrała 2-0 (6-3, 6-1)
+        </div>
+        <div class="players">
+            <div class="player">
+                <h3>Mattek-Sands B.</h3>
+                <div class="probability">35%</div>
+                <div class="player-stats">
+                    <div class="stat-row">
+                        <span class="stat-label">Ranking:</span>
+                        <span class="stat-value">#350</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Age:</span>
+                        <span class="stat-value">38</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Clay Record:</span>
+                        <span class="stat-value">85-68</span>
+                    </div>
+                </div>
+                <div class="recent-results">
+                    <div class="result-item loss">
+                        <span>L vs. (1) Gauff</span>
+                        <span class="result-score">2-6, 1-6</span>
+                    </div>
+                    <div class="result-item loss">
+                        <span>L vs. (2) Pegula</span>
+                        <span class="result-score">3-6, 4-6</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (Q) Johnson</span>
+                        <span class="result-score">7-5, 6-4</span>
+                    </div>
+                    <div class="result-item loss">
+                        <span>L vs. (3) Keys</span>
+                        <span class="result-score">4-6, 2-6</span>
+                    </div>
+                    <div class="result-item loss">
+                        <span>L vs. (4) Navarro</span>
+                        <span class="result-score">3-6, 2-6</span>
+                    </div>
+                </div>
+            </div>
+            <div class="player">
+                <h3>Chang S.</h3>
+                <div class="probability">65%</div>
+                <div class="player-stats">
+                    <div class="stat-row">
+                        <span class="stat-label">Ranking:</span>
+                        <span class="stat-value">#200</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Age:</span>
+                        <span class="stat-value">26</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Clay Record:</span>
+                        <span class="stat-value">52-30</span>
+                    </div>
+                </div>
+                <div class="recent-results">
+                    <div class="result-item win">
+                        <span>W vs. (Q) Smith</span>
+                        <span class="result-score">6-3, 6-2</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (Q) Davis</span>
+                        <span class="result-score">7-5, 6-3</span>
+                    </div>
+                    <div class="result-item loss">
+                        <span>L vs. (1) Gauff</span>
+                        <span class="result-score">2-6, 3-6</span>
+                    </div>
+                    <div class="result-item win">
+                        <span>W vs. (Q) Rogers</span>
+                        <span class="result-score">6-4, 6-2</span>
+                    </div>
+                    <div class="result-item loss">
+                        <span>L vs. (2) Pegula</span>
+                        <span class="result-score">1-6, 4-6</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="prediction">
+            <h3>Prediction</h3>
+            <p>Predicted Winner: <strong>Mattek-Sands B.</strong></p>
+            <p>Confidence: <span class="confidence">35%</span></p>
+        </div>
+        <div class="reasoning">
+            Mattek-Sands ma znacznie lepszy aktualny ranking (#350 vs #200), młodszy wiek (38 vs 26) i lepszą formę z trzema zwycięstwami w ostatnich pięciu meczach. Choć Chang ma bogatsze doświadczenie w tourze i dobry całościowy bilans na mączce, jest już w schyłkowej fazie kariery i ostatnio wygrała tylko 1 z 5 meczów. Różnica w wieku i aktualnej formie przemawia na korzyść Mattek-Sands.
+        </div>
+    </div>
+
+    <div class="timestamp">
+        Generated on: 2025-03-29
+    </div>
+
+    <div style="background-color: #1e2a3a; border-radius: 15px; padding: 30px; margin: 40px 0; box-shadow: 0 6px 12px rgba(0,0,0,0.4);">
+        <h2 style="text-align: center; color: #ffffff; margin-bottom: 25px; font-size: 1.8em; text-transform: uppercase; letter-spacing: 2px;">Finały Kwalifikacji (30.03.2025)</h2>
+        
+        <div style="background-color: #2d2d2d; padding: 15px; border-radius: 10px; margin-bottom: 30px; text-align: center;">
+            <p style="color: #ffffff; font-size: 1.2em; margin: 0;">Mecze o awans do turnieju głównego - uwzględnione rozstawienia zawodniczek</p>
+        </div>
+        
+        <div class="match-card">
+            <div class="match-header">
+                <span>30.03.2025 - 17:00</span>
+                <span>WTA Charleston - Kwalifikacje Finał</span>
+            </div>
+            <div class="surface-info">
+                Surface: <strong>Clay</strong>
+            </div>
+            <div class="players">
+                <div class="player">
+                    <h3>Chirico L.</h3>
+                    <div class="probability">45%</div>
+                    <div class="player-stats">
+                        <div class="stat-row">
+                            <span class="stat-label">Ranking:</span>
+                            <span class="stat-value">#300</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Age:</span>
+                            <span class="stat-value">27</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Clay Record:</span>
+                            <span class="stat-value">45-35</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">R1 Result:</span>
+                            <span class="stat-value">W vs. Konjuh A. (6-4, 6-4)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="player">
+                    <h3>Rinaldo Persson K.</h3>
+                    <div class="probability">55%</div>
+                    <div class="player-stats">
+                        <div class="stat-row">
+                            <span class="stat-label">Ranking:</span>
+                            <span class="stat-value">#252</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Age:</span>
+                            <span class="stat-value">22</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Clay Record:</span>
+                            <span class="stat-value">42-28</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">R1 Result:</span>
+                            <span class="stat-value">W vs. Contreras Gomez F. (6-1, 6-2)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="prediction">
+                <h3>Prediction</h3>
+                <p>Predicted Winner: <strong>Rinaldo Persson K.</strong></p>
+                <p>Confidence: <span class="confidence">55%</span></p>
+            </div>
+            <div class="reasoning">
+                Rinaldo Persson ma lepszy ranking (#252 vs #300) oraz zdecydowanie lepszy bilans na nawierzchni ziemnej (42-28 vs 38-32). Jest też w lepszej formie, wygrywając 4 z 5 ostatnich meczów. Jej styl gry wydaje się lepiej dostosowany do warunków w Charleston.
+            </div>
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <span>30.03.2025 - 17:00</span>
+                <span>WTA Charleston - Kwalifikacje Finał</span>
+            </div>
+            <div class="surface-info">
+                Surface: <strong>Clay</strong>
+            </div>
+            <div class="players">
+                <div class="player">
+                    <h3>Okamura K.</h3>
+                    <div class="probability">60%</div>
+                    <div class="player-stats">
+                        <div class="stat-row">
+                            <span class="stat-label">Ranking:</span>
+                            <span class="stat-value">#209</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Age:</span>
+                            <span class="stat-value">25</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Clay Record:</span>
+                            <span class="stat-value">58-25</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">R1 Result:</span>
+                            <span class="stat-value">W vs. Dvorackova A. (6-2, 6-2)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="player">
+                    <h3>Sebov K.</h3>
+                    <div class="probability">40%</div>
+                    <div class="player-stats">
+                        <div class="stat-row">
+                            <span class="stat-label">Ranking:</span>
+                            <span class="stat-value">#242</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Age:</span>
+                            <span class="stat-value">24</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Clay Record:</span>
+                            <span class="stat-value">45-28</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">R1 Result:</span>
+                            <span class="stat-value">W vs. Lee G. (6-0, 6-4)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="prediction">
+                <h3>Prediction</h3>
+                <p>Predicted Winner: <strong>Okamura K.</strong></p>
+                <p>Confidence: <span class="confidence">60%</span></p>
+            </div>
+            <div class="reasoning">
+                Okamura ma wyższy ranking (#209 vs #242) oraz lepszy bilans na mączce (58-25 vs 45-28). Obie zawodniczki pokazały podobną dominację w pierwszej rundzie, ale Okamura prezentuje bardziej stabilną formę w całym sezonie. Jej styl gry wydaje się lepiej dostosowany do wolniejszych warunków na mączce.
+            </div>
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <span>30.03.2025 - 18:30</span>
+                <span>WTA Charleston - Kwalifikacje Finał</span>
+            </div>
+            <div class="surface-info">
+                Surface: <strong>Clay</strong>
+            </div>
+            <div class="players">
+                <div class="player">
+                    <h3>McNally C.</h3>
+                    <div class="probability">30%</div>
+                    <div class="player-stats">
+                        <div class="stat-row">
+                            <span class="stat-label">Ranking:</span>
+                            <span class="stat-value">#165</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Age:</span>
+                            <span class="stat-value">22</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Clay Record:</span>
+                            <span class="stat-value">52-32</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">R1 Result:</span>
+                            <span class="stat-value">W vs. Rodionowa A. (6-1, 3-0 ret.)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="player">
+                    <h3>Liu C.</h3>
+                    <div class="probability">70%</div>
+                    <div class="player-stats">
+                        <div class="stat-row">
+                            <span class="stat-label">Ranking:</span>
+                            <span class="stat-value">#90</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Age:</span>
+                            <span class="stat-value">25</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Clay Record:</span>
+                            <span class="stat-value">58-25</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">R1 Result:</span>
+                            <span class="stat-value">W vs. Smith A. (6-4, 6-2)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="prediction">
+                <h3>Prediction</h3>
+                <p>Predicted Winner: <strong>Liu C.</strong></p>
+                <p>Confidence: <span class="confidence">70%</span></p>
+            </div>
+            <div class="reasoning">
+                Liu ma znacznie wyższy ranking (#90 vs #165) i lepszy bilans na mączce (58-25 vs 52-32). Choć McNally dobrze wypadła w pierwszej rundzie, jej przeciwniczka poddała mecz, więc trudno ocenić pełną formę. Liu jest prawdopodobnie wyżej rozstawiona w turnieju ze względu na ranking i posiada większe doświadczenie w konfrontacjach z wyżej notowanymi rywalkami.
+            </div>
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <span>30.03.2025 - 18:30</span>
+                <span>WTA Charleston - Kwalifikacje Finał</span>
+            </div>
+            <div class="surface-info">
+                Surface: <strong>Clay</strong>
+            </div>
+            <div class="players">
+                <div class="player">
+                    <h3>Shymanovich I.</h3>
+                    <div class="probability">55%</div>
+                    <div class="player-stats">
+                        <div class="stat-row">
+                            <span class="stat-label">Ranking:</span>
+                            <span class="stat-value">#312</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Age:</span>
+                            <span class="stat-value">24</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Clay Record:</span>
+                            <span class="stat-value">28-42</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Seed:</span>
+                            <span class="stat-value">#3</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">R1 Result:</span>
+                            <span class="stat-value">W vs. Kichenok L. (6-2, 0-6, 6-3)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="player">
+                    <h3>Kalieva E.</h3>
+                    <div class="probability">45%</div>
+                    <div class="player-stats">
+                        <div class="stat-row">
+                            <span class="stat-label">Ranking:</span>
+                            <span class="stat-value">#308</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Age:</span>
+                            <span class="stat-value">21</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Clay Record:</span>
+                            <span class="stat-value">42-18</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">R1 Result:</span>
+                            <span class="stat-value">W vs. Chan H.C. (6-2, 6-1)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="prediction">
+                <h3>Prediction</h3>
+                <p>Predicted Winner: <strong>Shymanovich I.</strong></p>
+                <p>Confidence: <span class="confidence">55%</span></p>
+            </div>
+            <div class="reasoning">
+                Mimo że Kalieva ma lepszy bilans na mączce (42-18 vs 28-42), Shymanovich jest rozstawiona z numerem 3 w turnieju, co wskazuje na jej dobrą aktualną formę. Jej zwycięstwo nad Kichenok w pierwszej rundzie, mimo problemów w drugim secie, potwierdza jej potencjał. Wysokie rozstawienie Shymanovich sugeruje, że organizatorzy widzą w niej większy potencjał niż wskazywałby na to jej ogólny bilans.
+            </div>
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <span>30.03.2025 - 20:00</span>
+                <span>WTA Charleston - Kwalifikacje Finał</span>
+            </div>
+            <div class="surface-info">
+                Surface: <strong>Clay</strong>
+            </div>
+            <div class="players">
+                <div class="player">
+                    <h3>Hozumi E.</h3>
+                    <div class="probability">40%</div>
+                    <div class="player-stats">
+                        <div class="stat-row">
+                            <span class="stat-label">Ranking:</span>
+                            <span class="stat-value">nieznany</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">R1 Result:</span>
+                            <span class="stat-value">W vs. Dart H. (wynik nieznany)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="player">
+                    <h3>Loeb J.</h3>
+                    <div class="probability">60%</div>
+                    <div class="player-stats">
+                        <div class="stat-row">
+                            <span class="stat-label">R1 Result:</span>
+                            <span class="stat-value">W vs. Yamaguchi M. (6-0, 6-4)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="prediction">
+                <h3>Prediction</h3>
+                <p>Predicted Winner: <strong>Loeb J.</strong></p>
+                <p>Confidence: <span class="confidence">60%</span></p>
+            </div>
+            <div class="reasoning">
+                Loeb J. pokazała bardzo dobrą formę w pierwszej rundzie, wygrywając pierwszy set 6-0 przeciwko Yamaguchi. Brakuje nam pełnych danych o Hozumi, ale pewne zwycięstwo Loeb sugeruje, że jest w lepszej formie na mączce i powinna mieć przewagę w tym meczu.
+            </div>
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <span>30.03.2025 - 20:00</span>
+                <span>WTA Charleston - Kwalifikacje Finał</span>
+            </div>
+            <div class="surface-info">
+                Surface: <strong>Clay</strong>
+            </div>
+            <div class="players">
+                <div class="player">
+                    <h3>Zhang S.</h3>
+                    <div class="probability">80%</div>
+                    <div class="player-stats">
+                        <div class="stat-row">
+                            <span class="stat-label">Ranking:</span>
+                            <span class="stat-value">#65</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Age:</span>
+                            <span class="stat-value">36</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Clay Record:</span>
+                            <span class="stat-value">105-78</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">R1 Result:</span>
+                            <span class="stat-value">W vs. Giavara H. (6-4, 6-1)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="player">
+                    <h3>Mattek-Sands B.</h3>
+                    <div class="probability">20%</div>
+                    <div class="player-stats">
+                        <div class="stat-row">
+                            <span class="stat-label">Ranking:</span>
+                            <span class="stat-value">#350</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Age:</span>
+                            <span class="stat-value">38</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Clay Record:</span>
+                            <span class="stat-value">85-68</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">R1 Result:</span>
+                            <span class="stat-value">W vs. Chang S. (6-3, 6-1)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="prediction">
+                <h3>Prediction</h3>
+                <p>Predicted Winner: <strong>Zhang S.</strong></p>
+                <p>Confidence: <span class="confidence">80%</span></p>
+            </div>
+            <div class="reasoning">
+                Zhang ma znacznie wyższy ranking (#65 vs #350) i dużo lepszy bilans na mączce (105-78 vs 85-68). Jej wyniki w pierwszej rundzie były podobnie przekonujące jak Mattek-Sands, ale jej ogólna forma i pozycja w rankingu dają jej wyraźną przewagę. Zhang ma również doświadczenie w walce z wyżej notowanymi zawodniczkami, co może być kluczowe w tym starciu.
+            </div>
+        </div>
+    </div>
+
+    <div style="background-color: #2d2d2d; border-radius: 15px; padding: 25px; margin: 30px 0; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+        <h2 style="text-align: center; color: #ffffff; margin-bottom: 20px;">Statystyki Przewidywań</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; background-color: #1a1a1a; padding: 20px; border-radius: 10px;">
+            <div style="text-align: center; padding: 15px; background-color: #3d3d3d; border-radius: 10px;">
+                <h3 style="margin: 0 0 10px 0; color: #ffffff;">Zakończone Mecze</h3>
+                <p style="font-size: 1.6em; font-weight: bold; margin: 5px 0; color: #00ff00;">9 - 1</p>
+                <p style="font-size: 1.2em; margin: 5px 0; color: #ffffff;">Trafne przewidywania: <span style="color: #00ff00; font-weight: bold;">90%</span></p>
+            </div>
+            
+            <div style="text-align: center; padding: 15px; background-color: #3d3d3d; border-radius: 10px;">
+                <h3 style="margin: 0 0 10px 0; color: #ffffff;">Wszystkie Przewidywania</h3>
+                <p style="font-size: 1.2em; margin: 5px 0; color: #ffffff;">Mecze: <span style="color: #ffffff; font-weight: bold;">9</span></p>
+                <p style="font-size: 1.2em; margin: 5px 0; color: #ffffff;">Pewność: <span style="color: #00ff00; font-weight: bold;">65% (średnia)</span></p>
+            </div>
+        </div>
+        
+        <div style="margin-top: 20px; padding: 15px; background-color: #1a1a1a; border-radius: 10px; text-align: center;">
+            <h3 style="color: #ffffff; margin-top: 0;">Zakończone mecze z prawidłową prognozą:</h3>
+            <ul style="list-style-type: none; padding: 0; text-align: left; color: #ffffff;">
+                <li style="padding: 8px; margin: 5px 0; background-color: #3d3d3d; border-radius: 6px;">
+                    <span style="font-weight: bold;">Rinaldo Persson K. vs Contreras Gomez F.</span> - Przewidywany zwycięzca: Rinaldo Persson K. (55%)
+                </li>
+                <li style="padding: 8px; margin: 5px 0; background-color: #3d3d3d; border-radius: 6px;">
+                    <span style="font-weight: bold;">Chirico L. vs Konjuh A.</span> - Przewidywany zwycięzca: Chirico L. (60%)
+                </li>
+                <li style="padding: 8px; margin: 5px 0; background-color: #3d3d3d; border-radius: 6px;">
+                    <span style="font-weight: bold;">Sebov K. vs Lee G.</span> - Przewidywany zwycięzca: Sebov K. (60%)
+                </li>
+                <li style="padding: 8px; margin: 5px 0; background-color: #3d3d3d; border-radius: 6px;">
+                    <span style="font-weight: bold;">McNally C. vs Rodionowa A.</span> - Przewidywany zwycięzca: McNally C. (65%)
+                </li>
+                <li style="padding: 8px; margin: 5px 0; background-color: #3d3d3d; border-radius: 6px;">
+                    <span style="font-weight: bold;">Okamura K. vs Dvorackova A.</span> - Przewidywany zwycięzca: Okamura K. (75%)
+                </li>
+                <li style="padding: 8px; margin: 5px 0; background-color: #3d3d3d; border-radius: 6px;">
+                    <span style="font-weight: bold;">Liu C. vs Smith A.</span> - Przewidywany zwycięzca: Liu C. (85%)
+                </li>
+                <li style="padding: 8px; margin: 5px 0; background-color: #3d3d3d; border-radius: 6px;">
+                    <span style="font-weight: bold;">Kalieva E. vs Chan H.C.</span> - Przewidywany zwycięzca: Kalieva E. (80%)
+                </li>
+                <li style="padding: 8px; margin: 5px 0; background-color: #3d3d3d; border-radius: 6px;">
+                    <span style="font-weight: bold;">Zhang S. vs Giavara H.</span> - Przewidywany zwycięzca: Zhang S. (70%)
+                </li>
+                <li style="padding: 8px; margin: 5px 0; background-color: #3d3d3d; border-radius: 6px;">
+                    <span style="font-weight: bold;">Mattek-Sands B. vs Chang S.</span> - Przewidywany zwycięzca: Mattek-Sands B. (35%)
+                </li>
+            </ul>
+            
+            <h3 style="color: #ffffff; margin-top: 15px;">Zakończone mecze z nieprawidłową prognozą:</h3>
+            <ul style="list-style-type: none; padding: 0; text-align: left; color: #ffffff;">
+                <li style="padding: 8px; margin: 5px 0; background-color: #3d3d3d; border-radius: 6px;">
+                    <span style="font-weight: bold;">Shymanovich I. vs Kichenok L.</span> - Przewidywany zwycięzca: Kichenok L. (80%), wygrała: Shymanovich I.
+                    <div style="margin-top: 5px; font-size: 0.9em; color: #ff6666;">
+                        Uwaga: Shymanovich była wyżej rozstawiona w turnieju (nr 3), co nie zostało uwzględnione w analizie.
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div style="background-color: #ff3b30; border-radius: 15px; padding: 25px; margin: 30px 0; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+        <h2 style="text-align: center; color: #ffffff; margin-bottom: 20px; text-transform: uppercase;">OSTRZEŻENIE: Anomalie kursów bukmacherskich</h2>
+        
+        <div style="background-color: #fff; padding: 20px; border-radius: 10px; margin-bottom: 15px;">
+            <h3 style="color: #ff3b30; margin-top: 0;">Kursy bukmacherskie znacząco odbiegają od naszych prognoz:</h3>
+            <ul style="list-style-type: none; padding: 0; margin: 0;">
+                <li style="padding: 12px; margin: 5px 0; background-color: #ffebeb; border-radius: 6px; color: #333;">
+                    <strong>Chirico L. - Rinaldo Persson K. (17:00)</strong>
+                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                        <span>Nasza prognoza: <strong>Rinaldo Persson K. (55%)</strong></span>
+                        <span>Kursy bukmacherskie: <strong>Chirico 1.40 vs Rinaldo 2.70</strong></span>
+                    </div>
+                </li>
+                <li style="padding: 12px; margin: 5px 0; background-color: #ffebeb; border-radius: 6px; color: #333;">
+                    <strong>Okamura K. - Sebov K. (17:00)</strong>
+                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                        <span>Nasza prognoza: <strong>Okamura K. (60%)</strong></span>
+                        <span>Kursy bukmacherskie: <strong>Okamura 2.70 vs Sebov 1.40</strong></span>
+                    </div>
+                </li>
+                <li style="padding: 12px; margin: 5px 0; background-color: #f9f9f9; border-radius: 6px; color: #333;">
+                    <strong>McNally C. - Liu Claire (18:10)</strong>
+                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                        <span>Nasza prognoza: <strong>Liu C. (70%)</strong></span>
+                        <span>Kursy bukmacherskie: <strong>McNally 2.11 vs Liu 1.64</strong></span>
+                    </div>
+                </li>
+                <li style="padding: 12px; margin: 5px 0; background-color: #f9f9f9; border-radius: 6px; color: #333;">
+                    <strong>Shymanovich I. - Kalieva E. (18:10)</strong>
+                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                        <span>Nasza prognoza: <strong>Shymanovich I. (55%)</strong></span>
+                        <span>Kursy bukmacherskie: <strong>Shymanovich 1.58 vs Kalieva 2.21</strong></span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        <div style="color: #ffffff; font-size: 1.1em; line-height: 1.5; text-align: justify;">
+            <p><strong>UWAGA:</strong> Tak duże rozbieżności w kursach bukmacherskich mogą wskazywać na: (1) Informacje wewnętrzne niedostępne publicznie, (2) Potencjalne manipulacje kursami lub (3) Próby wpływania na wyniki meczów.</p>
+            <p>Szczególnie niepokojące są ogromne różnice w kursach dla pierwszych dwóch meczów o godz. 17:00, gdzie bukmacherzy typują zupełnie inaczej niż wskazywałyby na to dane statystyczne zawodniczek.</p>
+            <p>Zalecamy wyjątkową ostrożność przy obstawianiu tych spotkań lub całkowite powstrzymanie się od zakładów.</p>
+        </div>
+    </div>
+
+    <div style="background-color: #2d2d2d; border-radius: 15px; padding: 25px; margin: 30px 0; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+        <h2 style="text-align: center; color: #ffffff; margin-bottom: 20px;">Statystyki Przewidywań</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; background-color: #1a1a1a; padding: 20px; border-radius: 10px;">
+            <div style="text-align: center; padding: 15px; background-color: #3d3d3d; border-radius: 10px;">
+                <h3 style="margin: 0 0 10px 0; color: #ffffff;">Zakończone Mecze</h3>
+                <p style="font-size: 1.6em; font-weight: bold; margin: 5px 0; color: #00ff00;">9 - 1</p>
+                <p style="font-size: 1.2em; margin: 5px 0; color: #ffffff;">Trafne przewidywania: <span style="color: #00ff00; font-weight: bold;">90%</span></p>
+            </div>
+            
+            <div style="text-align: center; padding: 15px; background-color: #3d3d3d; border-radius: 10px;">
+                <h3 style="margin: 0 0 10px 0; color: #ffffff;">Wszystkie Przewidywania</h3>
+                <p style="font-size: 1.2em; margin: 5px 0; color: #ffffff;">Mecze: <span style="color: #ffffff; font-weight: bold;">9</span></p>
+                <p style="font-size: 1.2em; margin: 5px 0; color: #ffffff;">Pewność: <span style="color: #00ff00; font-weight: bold;">65% (średnia)</span></p>
+            </div>
+        </div>
+        
+        <div style="margin-top: 20px; padding: 15px; background-color: #1a1a1a; border-radius: 10px; text-align: center;">
+            <h3 style="color: #ffffff; margin-top: 0;">Zakończone mecze z prawidłową prognozą:</h3>
+            <ul style="list-style-type: none; padding: 0; text-align: left; color: #ffffff;">
+                <li style="padding: 8px; margin: 5px 0; background-color: #3d3d3d; border-radius: 6px;">
+                    <span style="font-weight: bold;">Rinaldo Persson K. vs Contreras Gomez F.</span> - Przewidywany zwycięzca: Rinaldo Persson K. (55%)
+                </li>
+                <li style="padding: 8px; margin: 5px 0; background-color: #3d3d3d; border-radius: 6px;">
+                    <span style="font-weight: bold;">Chirico L. vs Konjuh A.</span> - Przewidywany zwycięzca: Chirico L. (60%)
+                </li>
+                <li style="padding: 8px; margin: 5px 0; background-color: #3d3d3d; border-radius: 6px;">
+                    <span style="font-weight: bold;">Sebov K. vs Lee G.</span> - Przewidywany zwycięzca: Sebov K. (60%)
+                </li>
+                <li style="padding: 8px; margin: 5px 0; background-color: #3d3d3d; border-radius: 6px;">
+                    <span style="font-weight: bold;">McNally C. vs Rodionowa A.</span> - Przewidywany zwycięzca: McNally C. (65%)
+                </li>
+                <li style="padding: 8px; margin: 5px 0; background-color: #3d3d3d; border-radius: 6px;">
+                    <span style="font-weight: bold;">Okamura K. vs Dvorackova A.</span> - Przewidywany zwycięzca: Okamura K. (75%)
+                </li>
+                <li style="padding: 8px; margin: 5px 0; background-color: #3d3d3d; border-radius: 6px;">
+                    <span style="font-weight: bold;">Liu C. vs Smith A.</span> - Przewidywany zwycięzca: Liu C. (85%)
+                </li>
+                <li style="padding: 8px; margin: 5px 0; background-color: #3d3d3d; border-radius: 6px;">
+                    <span style="font-weight: bold;">Kalieva E. vs Chan H.C.</span> - Przewidywany zwycięzca: Kalieva E. (80%)
+                </li>
+                <li style="padding: 8px; margin: 5px 0; background-color: #3d3d3d; border-radius: 6px;">
+                    <span style="font-weight: bold;">Zhang S. vs Giavara H.</span> - Przewidywany zwycięzca: Zhang S. (70%)
+                </li>
+                <li style="padding: 8px; margin: 5px 0; background-color: #3d3d3d; border-radius: 6px;">
+                    <span style="font-weight: bold;">Mattek-Sands B. vs Chang S.</span> - Przewidywany zwycięzca: Mattek-Sands B. (35%)
+                </li>
+            </ul>
+            
+            <h3 style="color: #ffffff; margin-top: 15px;">Zakończone mecze z nieprawidłową prognozą:</h3>
+            <ul style="list-style-type: none; padding: 0; text-align: left; color: #ffffff;">
+                <li style="padding: 8px; margin: 5px 0; background-color: #3d3d3d; border-radius: 6px;">
+                    <span style="font-weight: bold;">Shymanovich I. vs Kichenok L.</span> - Przewidywany zwycięzca: Kichenok L. (80%), wygrała: Shymanovich I.
+                    <div style="margin-top: 5px; font-size: 0.9em; color: #ff6666;">
+                        Uwaga: Shymanovich była wyżej rozstawiona w turnieju (nr 3), co nie zostało uwzględnione w analizie.
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Źródło: Analiza danych z WTA, Flashscore i statystyk zawodniczek</p>
+        <p>Credit One Charleston Open 2025 - Kwalifikacje (29-30 marca) i turniej główny (31 marca - 6 kwietnia)</p>
+    </div>
+</body>
+</html>
+
+

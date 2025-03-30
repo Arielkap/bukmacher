@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATP Marrakech 2025 - Kwalifikacje</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: #1e2a3a;
+            padding: 30px 0;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.2em;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .tournament-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .info-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .info-label {
+            font-size: 0.9em;
+            color: #888;
+            margin-bottom: 5px;
+        }
+        
+        .info-value {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        .surface-clay {
+            color: #d35400;
+        }
+        
+        .matches-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .match-card {
+            background-color: #1e2a3a;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+        }
+        
+        .match-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .match-header {
+            background-color: #2c3e50;
+            padding: 12px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .match-time {
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        .match-round {
+            background-color: #d35400;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        
+        .match-content {
+            padding: 20px;
+        }
+        
+        .player-container {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 15px;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .player {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+        }
+        
+        .player-name {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+        
+        .player-stats {
+            font-size: 0.9em;
+            color: #bbb;
+        }
+        
+        .vs {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #d35400;
+        }
+        
+        .match-stats {
+            display: flex;
+            justify-content: space-between;
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 12px;
+            border-radius: 8px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-label {
+            font-size: 0.8em;
+            color: #888;
+            margin-bottom: 5px;
+        }
+        
+        .stat-value {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        .prediction-container {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: rgba(211, 84, 0, 0.1);
+            border-radius: 8px;
+            border-left: 4px solid #d35400;
+        }
+        
+        .prediction-header {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #d35400;
+            margin-bottom: 10px;
+        }
+        
+        .prediction-text {
+            color: #ddd;
+            line-height: 1.5;
+        }
+        
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        /* Nowe style dla faworyta i prawdopodobieństwa */
+        .player.favorite {
+            background-color: rgba(39, 174, 96, 0.2);
+            border: 1px solid #27ae60;
+        }
+        
+        .player-name.favorite {
+            color: #2ecc71;
+        }
+        
+        .probability-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .probability-item {
+            flex: 1;
+            padding: 8px;
+            position: relative;
+        }
+        
+        .probability-value {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .probability-bar {
+            height: 6px;
+            background-color: #34495e;
+            border-radius: 3px;
+            overflow: hidden;
+            margin-top: 5px;
+        }
+        
+        .probability-fill {
+            height: 100%;
+            background-color: #3498db;
+        }
+        
+        .probability-fill.favorite {
+            background-color: #2ecc71;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Dodanie paska nawigacyjnego -->
+        <div class="nav-container" style="display: flex; justify-content: center; margin: 20px 0; background-color: #1e2a3a; border-radius: 10px; padding: 10px;">
+            <div class="nav-tabs" style="display: flex; background-color: rgba(255, 255, 255, 0.05); border-radius: 10px; overflow: hidden;">
+                <a href="index.html" class="nav-tab" style="padding: 12px 25px; font-size: 1.1em; font-weight: bold; color: #fff; text-decoration: none; transition: all 0.3s; border-right: 1px solid rgba(255, 255, 255, 0.1);">Strona Główna</a>
+                <a href="predictions.html" class="nav-tab" style="padding: 12px 25px; font-size: 1.1em; font-weight: bold; color: #fff; text-decoration: none; transition: all 0.3s; border-right: 1px solid rgba(255, 255, 255, 0.1);">WTA Charleston</a>
+                <a href="marrakech_atp_qualifications.html" class="nav-tab active" style="padding: 12px 25px; font-size: 1.1em; font-weight: bold; color: #fff; text-decoration: none; transition: all 0.3s; border-right: 1px solid rgba(255, 255, 255, 0.1); background-color: #d35400;">ATP Marrakech</a>
+                <a href="tennis_analysis_guidelines.html" class="nav-tab" style="padding: 12px 25px; font-size: 1.1em; font-weight: bold; color: #fff; text-decoration: none; transition: all 0.3s;">Wytyczne</a>
+            </div>
+        </div>
+        <!-- Koniec paska nawigacyjnego -->
+        
+        <header>
+            <h1>ATP Marrakech 2025</h1>
+            <div class="tournament-info">
+                <div class="info-item">
+                    <span class="info-label">TURNIEJ</span>
+                    <span class="info-value">Grand Prix Hassan II</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">MIEJSCE</span>
+                    <span class="info-value">Marrakech, Maroko</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">NAWIERZCHNIA</span>
+                    <span class="info-value surface-clay">Ziemna</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">KATEGORIA</span>
+                    <span class="info-value">ATP 250</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">FAZA</span>
+                    <span class="info-value">Kwalifikacje</span>
+                </div>
+            </div>
+        </header>
+        
+        <div class="matches-container">
+            <!-- Mecz 1 -->
+            <div class="match-card">
+                <div class="match-header">
+                    <span class="match-time">30.03.2025 - 13:00</span>
+                    <span class="match-round">Kwalifikacje R1</span>
+                </div>
+                <div class="match-content">
+                    <div class="player-container">
+                        <div class="player favorite">
+                            <div class="player-name favorite">Coria F.</div>
+                            <div class="player-stats">
+                                <div>Argentyna</div>
+                                <div>Ranking: #85</div>
+                                <div>Clay: 145-62</div>
+                                <div>Rozstawienie: #2</div>
+                                <div>Forma: W W L W W</div>
+                            </div>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="player">
+                            <div class="player-name">Zeppieri G.</div>
+                            <div class="player-stats">
+                                <div>Włochy</div>
+                                <div>Ranking: #112</div>
+                                <div>Clay: 95-45</div>
+                                <div>Rozstawienie: -</div>
+                                <div>Forma: W L W W L</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="match-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">H2H</div>
+                            <div class="stat-value">1-1</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Kursy</div>
+                            <div class="stat-value">1.85 / 1.95</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Wiek</div>
+                            <div class="stat-value">32 / 22</div>
+                        </div>
+                    </div>
+                    
+                    <div class="probability-container">
+                        <div class="probability-item">
+                            <div class="probability-value">65%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill favorite" style="width: 65%"></div>
+                            </div>
+                        </div>
+                        <div class="probability-item">
+                            <div class="probability-value">35%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill" style="width: 35%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="prediction-container">
+                        <div class="prediction-header">Prognoza</div>
+                        <div class="prediction-text">
+                            Coria ma większe doświadczenie na mączce i więcej zwycięstw w karierze na tej nawierzchni. Jako zawodnik rozstawiony z numerem 2 jest w dobrej formie, wygrywając 4 z ostatnich 5 meczów. Zeppieri jest młodszy i ma lepszą dyspozycję fizyczną, ale mniejsze doświadczenie w ważnych turniejach i nieco mniej stabilną formę (3 zwycięstwa w 5 ostatnich meczach). Spodziewamy się wyrównanego meczu z przewagą dla Corii ze względu na jego rutynę na mączce i aktualne rozstawienie.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mecz 2 -->
+            <div class="match-card">
+                <div class="match-header">
+                    <span class="match-time">30.03.2025 - 13:00</span>
+                    <span class="match-round">Kwalifikacje R1</span>
+                </div>
+                <div class="match-content">
+                    <div class="player-container">
+                        <div class="player">
+                            <div class="player-name">Hemery C.</div>
+                            <div class="player-stats">
+                                <div>Francja</div>
+                                <div>Ranking: #175</div>
+                                <div>Clay: 112-78</div>
+                                <div>Rozstawienie: -</div>
+                                <div>Forma: L W L W L</div>
+                            </div>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="player favorite">
+                            <div class="player-name favorite">Moro Canas A.</div>
+                            <div class="player-stats">
+                                <div>Hiszpania</div>
+                                <div>Ranking: #208</div>
+                                <div>Clay: 122-55</div>
+                                <div>Rozstawienie: -</div>
+                                <div>Forma: W W W L W</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="match-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">H2H</div>
+                            <div class="stat-value">0-1</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Kursy</div>
+                            <div class="stat-value">2.10 / 1.75</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Wiek</div>
+                            <div class="stat-value">29 / 26</div>
+                        </div>
+                    </div>
+                    
+                    <div class="probability-container">
+                        <div class="probability-item">
+                            <div class="probability-value">35%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill" style="width: 35%"></div>
+                            </div>
+                        </div>
+                        <div class="probability-item">
+                            <div class="probability-value">65%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill favorite" style="width: 65%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="prediction-container">
+                        <div class="prediction-header">Prognoza</div>
+                        <div class="prediction-text">
+                            Moro Canas jako Hiszpan jest specjalistą od gry na mączce, co widać po jego imponującym bilansie zwycięstw na tej nawierzchni. Jego aktualna forma jest znacznie lepsza niż Hemery'ego - wygrał 4 z ostatnich 5 meczów, podczas gdy Francuz tylko 2. Hemery ma wyższy ranking, ale gorszy bilans na ziemi. Dodatkowo, w ich jedynym bezpośrednim spotkaniu wygrał Hiszpan. Spodziewamy się zwycięstwa Moro Canasa, który prezentuje lepszą formę na mączce.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mecz 3 -->
+            <div class="match-card">
+                <div class="match-header">
+                    <span class="match-time">30.03.2025 - 14:30</span>
+                    <span class="match-round">Kwalifikacje R1</span>
+                </div>
+                <div class="match-content">
+                    <div class="player-container">
+                        <div class="player favorite">
+                            <div class="player-name favorite">Cerundolo J. M.</div>
+                            <div class="player-stats">
+                                <div>Argentyna</div>
+                                <div>Ranking: #72</div>
+                                <div>Clay: 158-62</div>
+                                <div>Rozstawienie: #1</div>
+                                <div>Forma: W W W L W</div>
+                            </div>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="player">
+                            <div class="player-name">Bennani K.</div>
+                            <div class="player-stats">
+                                <div>Maroko</div>
+                                <div>Ranking: #352</div>
+                                <div>Clay: 45-38</div>
+                                <div>Rozstawienie: WC</div>
+                                <div>Forma: L W L W L</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="match-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">H2H</div>
+                            <div class="stat-value">0-0</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Kursy</div>
+                            <div class="stat-value">1.15 / 5.50</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Wiek</div>
+                            <div class="stat-value">23 / 26</div>
+                        </div>
+                    </div>
+                    
+                    <div class="probability-container">
+                        <div class="probability-item">
+                            <div class="probability-value">90%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill favorite" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="probability-item">
+                            <div class="probability-value">10%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill" style="width: 10%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="prediction-container">
+                        <div class="prediction-header">Prognoza</div>
+                        <div class="prediction-text">
+                            Zdecydowanym faworytem jest Cerundolo, rozstawiony z numerem 1 przedstawiciel argentyńskiej szkoły tenisa na mączce. Różnica w rankingu i doświadczeniu jest ogromna. Argentyńczyk prezentuje świetną formę, wygrywając 4 z 5 ostatnich meczów. Bennani, występujący dzięki dzikiej karcie jako reprezentant gospodarzy, będzie miał wsparcie lokalnych kibiców, ale jego forma jest nierówna (2 zwycięstwa w 5 ostatnich meczach). Różnica klas jest zbyt duża - Cerundolo powinien wygrać pewnie.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mecz 4 -->
+            <div class="match-card">
+                <div class="match-header">
+                    <span class="match-time">30.03.2025 - 14:30</span>
+                    <span class="match-round">Kwalifikacje R1</span>
+                </div>
+                <div class="match-content">
+                    <div class="player-container">
+                        <div class="player">
+                            <div class="player-name">Droguet T.</div>
+                            <div class="player-stats">
+                                <div>Francja</div>
+                                <div>Ranking: #135</div>
+                                <div>Clay: 78-52</div>
+                                <div>Rozstawienie: -</div>
+                                <div>Forma: W L L W L</div>
+                            </div>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="player favorite">
+                            <div class="player-name favorite">Koepfer D.</div>
+                            <div class="player-stats">
+                                <div>Niemcy</div>
+                                <div>Ranking: #92</div>
+                                <div>Clay: 102-68</div>
+                                <div>Rozstawienie: #3</div>
+                                <div>Forma: W W L W W</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="match-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">H2H</div>
+                            <div class="stat-value">0-2</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Kursy</div>
+                            <div class="stat-value">2.35 / 1.60</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Wiek</div>
+                            <div class="stat-value">23 / 30</div>
+                        </div>
+                    </div>
+                    
+                    <div class="probability-container">
+                        <div class="probability-item">
+                            <div class="probability-value">30%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill" style="width: 30%"></div>
+                            </div>
+                        </div>
+                        <div class="probability-item">
+                            <div class="probability-value">70%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill favorite" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="prediction-container">
+                        <div class="prediction-header">Prognoza</div>
+                        <div class="prediction-text">
+                            Koepfer, rozstawiony z numerem 3, ma przewagę pod względem rankingu, bilansu na mączce oraz w bezpośrednich pojedynkach. Jest również w znacznie lepszej formie, wygrywając 4 z ostatnich 5 meczów, podczas gdy Droguet tylko 2. Niemiec wydaje się być dobrze przygotowany do turnieju, co potwierdza jego rozstawienie. Droguet jest młodszym zawodnikiem z potencjałem, ale jego aktualna dyspozycja pozostawia wiele do życzenia. Spodziewamy się pewnego zwycięstwa Koepfera.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mecz 5 -->
+            <div class="match-card">
+                <div class="match-header">
+                    <span class="match-time">30.03.2025 - 14:30</span>
+                    <span class="match-round">Kwalifikacje R1</span>
+                </div>
+                <div class="match-content">
+                    <div class="player-container">
+                        <div class="player">
+                            <div class="player-name">Majchrzak K.</div>
+                            <div class="player-stats">
+                                <div>Polska</div>
+                                <div>Ranking: #128</div>
+                                <div>Clay: 85-62</div>
+                                <div>Rozstawienie: -</div>
+                                <div>Forma: W L W L W</div>
+                            </div>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="player favorite">
+                            <div class="player-name favorite">Trungelliti M.</div>
+                            <div class="player-stats">
+                                <div>Argentyna</div>
+                                <div>Ranking: #148</div>
+                                <div>Clay: 142-78</div>
+                                <div>Rozstawienie: #7</div>
+                                <div>Forma: W W L W L</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="match-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">H2H</div>
+                            <div class="stat-value">1-1</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Kursy</div>
+                            <div class="stat-value">2.10 / 1.75</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Wiek</div>
+                            <div class="stat-value">29 / 34</div>
+                        </div>
+                    </div>
+                    
+                    <div class="probability-container">
+                        <div class="probability-item">
+                            <div class="probability-value">40%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill" style="width: 40%"></div>
+                            </div>
+                        </div>
+                        <div class="probability-item">
+                            <div class="probability-value">60%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill favorite" style="width: 60%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="prediction-container">
+                        <div class="prediction-header">Prognoza</div>
+                        <div class="prediction-text">
+                            Trungelliti ma znacznie lepszy bilans meczów na mączce, co jest typowe dla argentyńskich tenisistów. Jako rozstawiony zawodnik (seed #7) potwierdza swoją wartość na tej nawierzchni. Obaj zawodnicy są w podobnej formie, wygrywając po 3 z ostatnich 5 meczów. Mimo że jest starszy i niżej notowany, jego doświadczenie na tej nawierzchni i status rozstawionego zawodnika dają mu przewagę. Majchrzak prezentuje solidny tenis, ale na mączce nie czuje się tak pewnie jak jego rywal. Faworytem będzie rozstawiony Argentyńczyk.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mecz 6 -->
+            <div class="match-card">
+                <div class="match-header">
+                    <span class="match-time">30.03.2025 - 16:00</span>
+                    <span class="match-round">Kwalifikacje R1</span>
+                </div>
+                <div class="match-content">
+                    <div class="player-container">
+                        <div class="player">
+                            <div class="player-name">Jamji A.</div>
+                            <div class="player-stats">
+                                <div>Maroko</div>
+                                <div>Ranking: #485</div>
+                                <div>Clay: 32-28</div>
+                                <div>Rozstawienie: WC</div>
+                                <div>Forma: L L W L L</div>
+                            </div>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="player favorite">
+                            <div class="player-name favorite">Nagal S.</div>
+                            <div class="player-stats">
+                                <div>Indie</div>
+                                <div>Ranking: #98</div>
+                                <div>Clay: 112-82</div>
+                                <div>Rozstawienie: #4</div>
+                                <div>Forma: W W W L W</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="match-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">H2H</div>
+                            <div class="stat-value">0-0</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Kursy</div>
+                            <div class="stat-value">6.50 / 1.10</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Wiek</div>
+                            <div class="stat-value">21 / 27</div>
+                        </div>
+                    </div>
+                    
+                    <div class="probability-container">
+                        <div class="probability-item">
+                            <div class="probability-value">5%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill" style="width: 5%"></div>
+                            </div>
+                        </div>
+                        <div class="probability-item">
+                            <div class="probability-value">95%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill favorite" style="width: 95%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="prediction-container">
+                        <div class="prediction-header">Prognoza</div>
+                        <div class="prediction-text">
+                            Zdecydowanym faworytem jest rozstawiony z numerem 4 Nagal, który prezentuje znakomitą formę (4 zwycięstwa w 5 ostatnich meczach) i ma bogate doświadczenie na mączce. Jamji, występujący z dziką kartą jako reprezentant gospodarzy, jest w słabej dyspozycji (tylko 1 zwycięstwo w 5 ostatnich spotkaniach). Różnica w rankingu, formie i umiejętnościach gry na mączce jest ogromna. Nagal powinien wygrać bardzo pewnie.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mecz 7 -->
+            <div class="match-card">
+                <div class="match-header">
+                    <span class="match-time">30.03.2025 - 16:00</span>
+                    <span class="match-round">Kwalifikacje R1</span>
+                </div>
+                <div class="match-content">
+                    <div class="player-container">
+                        <div class="player">
+                            <div class="player-name">Mayot H.</div>
+                            <div class="player-stats">
+                                <div>Francja</div>
+                                <div>Ranking: #145</div>
+                                <div>Clay: 65-42</div>
+                                <div>Rozstawienie: #8</div>
+                                <div>Forma: L W W L W</div>
+                            </div>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="player favorite">
+                            <div class="player-name favorite">Karacew A.</div>
+                            <div class="player-stats">
+                                <div>Rosja</div>
+                                <div>Ranking: #89</div>
+                                <div>Clay: 98-75</div>
+                                <div>Rozstawienie: #5</div>
+                                <div>Forma: W W W L W</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="match-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">H2H</div>
+                            <div class="stat-value">0-1</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Kursy</div>
+                            <div class="stat-value">2.45 / 1.55</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Wiek</div>
+                            <div class="stat-value">22 / 30</div>
+                        </div>
+                    </div>
+                    
+                    <div class="probability-container">
+                        <div class="probability-item">
+                            <div class="probability-value">35%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill" style="width: 35%"></div>
+                            </div>
+                        </div>
+                        <div class="probability-item">
+                            <div class="probability-value">65%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill favorite" style="width: 65%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="prediction-container">
+                        <div class="prediction-header">Prognoza</div>
+                        <div class="prediction-text">
+                            Karacew, rozstawiony z numerem 5, ma przewagę zarówno w rankingu, jak i doświadczeniu. Jego aktualna forma jest imponująca - wygrał 4 z ostatnich 5 meczów. Styl gry Rosjanina, oparty na agresywnym forehandzie, dobrze sprawdza się na mączce. Mayot, mimo rozstawienia z numerem 8, ma gorszy bilans na tej nawierzchni i niższy ranking, choć jego forma również jest dobra (3 zwycięstwa w 5 meczach). Spodziewamy się zwycięstwa wyżej rozstawionego Karacewa w trzech setach.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mecz 8 -->
+            <div class="match-card">
+                <div class="match-header">
+                    <span class="match-time">30.03.2025 - 16:00</span>
+                    <span class="match-round">Kwalifikacje R1</span>
+                </div>
+                <div class="match-content">
+                    <div class="player-container">
+                        <div class="player favorite">
+                            <div class="player-name favorite">Rocha H.</div>
+                            <div class="player-stats">
+                                <div>Brazylia</div>
+                                <div>Ranking: #172</div>
+                                <div>Clay: 108-56</div>
+                                <div>Rozstawienie: -</div>
+                                <div>Forma: W W W L W</div>
+                            </div>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="player">
+                            <div class="player-name">Herbert P.H.</div>
+                            <div class="player-stats">
+                                <div>Francja</div>
+                                <div>Ranking: #125</div>
+                                <div>Clay: 75-68</div>
+                                <div>Rozstawienie: #6</div>
+                                <div>Forma: L L W L W</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="match-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">H2H</div>
+                            <div class="stat-value">1-0</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Kursy</div>
+                            <div class="stat-value">1.90 / 1.90</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Wiek</div>
+                            <div class="stat-value">23 / 33</div>
+                        </div>
+                    </div>
+                    
+                    <div class="probability-container">
+                        <div class="probability-item">
+                            <div class="probability-value">60%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill favorite" style="width: 60%"></div>
+                            </div>
+                        </div>
+                        <div class="probability-item">
+                            <div class="probability-value">40%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill" style="width: 40%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="prediction-container">
+                        <div class="prediction-header">Prognoza</div>
+                        <div class="prediction-text">
+                            Mimo że Herbert jest rozstawiony z numerem 6, to Rocha prezentuje znacznie lepszą formę, wygrywając 4 z 5 ostatnich meczów (Herbert tylko 2). Brazylijczyk ma większe obycie z mączką, co widać po jego bilansie zwycięstw. Herbert jest wszechstronnym tenisistą, bardziej znanym z gry deblowej, ale na ziemi nie czuje się tak pewnie. W ich jedynym pojedynku wygrał Rocha, co również daje mu mentalną przewagę. Mimo rozstawienia Herberta i niższego rankingu, to Brazylijczyk powinien być faworytem ze względu na lepszą formę i większe doświadczenie na mączce.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Wygenerowano: 30.03.2025</p>
+            <p>© 2025 Prognozy tenisowe ATP Marrakech</p>
+        </div>
+    </div>
+</body>
+</html>
