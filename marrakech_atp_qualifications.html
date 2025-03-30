@@ -69,11 +69,18 @@
         }
         
         .matches-container {
-            display: flex;
-            flex-direction: column;
-            max-width: 600px;
-            margin: 30px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
             gap: 25px;
+            margin: 30px auto;
+            max-width: 1200px;
+        }
+        
+        @media (max-width: 950px) {
+            .matches-container {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+            }
         }
         
         .match-card {
@@ -340,7 +347,7 @@
                         </div>
                     </div>
                     
-                    <!-- Miejsce na wynik meczu -->
+                    <div class="result-container">
                         <div style="font-size: 1.2em; font-weight: bold; color: #fff; margin-bottom: 10px;">WYNIK KOŃCOWY</div>
                         <div style="display: flex; justify-content: space-between; align-items: center;">
                             <div style="flex: 1; text-align: center; font-weight: bold; font-size: 1.6em; color: #2ecc71;">1</div>
@@ -425,7 +432,7 @@
                         </div>
                     </div>
                     
-                    <!-- Miejsce na wynik meczu -->
+                    <div class="result-container">
                         <div style="font-size: 1.2em; font-weight: bold; color: #fff; margin-bottom: 10px;">WYNIK KOŃCOWY</div>
                         <div style="display: flex; justify-content: space-between; align-items: center;">
                             <div style="flex: 1; text-align: center; font-weight: bold; font-size: 1.6em; color: #2ecc71;">2</div>
@@ -514,7 +521,7 @@
                         </div>
                     </div>
                     
-                    <!-- Miejsce na wynik meczu -->
+                    <div class="result-container">
                         <div style="font-size: 1.2em; font-weight: bold; color: #fff; margin-bottom: 10px;">WYNIK KOŃCOWY</div>
                         <div style="display: flex; justify-content: space-between; align-items: center;">
                             <div style="flex: 1; text-align: center; font-weight: bold; font-size: 1.6em; color: #2ecc71;">2</div>
@@ -603,7 +610,7 @@
                         </div>
                     </div>
                     
-                    <!-- Miejsce na wynik meczu -->
+                    <div class="result-container">
                         <div style="font-size: 1.2em; font-weight: bold; color: #fff; margin-bottom: 10px;">WYNIK KOŃCOWY</div>
                         <div style="display: flex; justify-content: space-between; align-items: center;">
                             <div style="flex: 1; text-align: center; font-weight: bold; font-size: 1.6em; color: #e74c3c;">0</div>
@@ -692,7 +699,7 @@
                         </div>
                     </div>
                     
-                    <!-- Miejsce na wynik meczu -->
+                    <div class="result-container">
                         <div style="font-size: 1.2em; font-weight: bold; color: #fff; margin-bottom: 10px;">WYNIK KOŃCOWY</div>
                         <div style="display: flex; justify-content: space-between; align-items: center;">
                             <div style="flex: 1; text-align: center; font-weight: bold; font-size: 1.6em; color: #2ecc71;">2</div>
@@ -781,7 +788,24 @@
                         </div>
                     </div>
                     
-                    <!-- Miejsce na wynik meczu -->
+                    <div class="result-container">
+                        <div style="font-size: 1.2em; font-weight: bold; color: #fff; margin-bottom: 10px;">WYNIK KOŃCOWY</div>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div style="flex: 1; text-align: center; font-weight: bold; font-size: 1.6em; color: #2ecc71;">2</div>
+                            <div style="flex: 1; text-align: center; font-size: 1.1em; color: #bbb;">SETY</div>
+                            <div style="flex: 1; text-align: center; font-weight: bold; font-size: 1.6em; color: #e74c3c;">0</div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="flex: 1; text-align: center; font-weight: bold;">6</div>
+                            <div style="flex: 1; text-align: center; color: #bbb;">SET 1</div>
+                            <div style="flex: 1; text-align: center; font-weight: bold;">4</div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="flex: 1; text-align: center; font-weight: bold;">6</div>
+                            <div style="flex: 1; text-align: center; color: #bbb;">SET 2</div>
+                            <div style="flex: 1; text-align: center; font-weight: bold;">6</div>
+                        </div>
+                    </div>
                     
                     <div class="probability-container">
                         <div class="probability-item">
@@ -853,7 +877,24 @@
                         </div>
                     </div>
                     
-                    <!-- Miejsce na wynik meczu -->
+                    <div class="result-container">
+                        <div style="font-size: 1.2em; font-weight: bold; color: #fff; margin-bottom: 10px;">WYNIK KOŃCOWY</div>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div style="flex: 1; text-align: center; font-weight: bold; font-size: 1.6em; color: #2ecc71;">2</div>
+                            <div style="flex: 1; text-align: center; font-size: 1.1em; color: #bbb;">SETY</div>
+                            <div style="flex: 1; text-align: center; font-weight: bold; font-size: 1.6em; color: #e74c3c;">0</div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="flex: 1; text-align: center; font-weight: bold;">6</div>
+                            <div style="flex: 1; text-align: center; color: #bbb;">SET 1</div>
+                            <div style="flex: 1; text-align: center; font-weight: bold;">4</div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="flex: 1; text-align: center; font-weight: bold;">6</div>
+                            <div style="flex: 1; text-align: center; color: #bbb;">SET 2</div>
+                            <div style="flex: 1; text-align: center; font-weight: bold;">6</div>
+                        </div>
+                    </div>
                     
                     <div class="probability-container">
                         <div class="probability-item">
@@ -925,7 +966,24 @@
                         </div>
                     </div>
                     
-                    <!-- Miejsce na wynik meczu -->
+                    <div class="result-container">
+                        <div style="font-size: 1.2em; font-weight: bold; color: #fff; margin-bottom: 10px;">WYNIK KOŃCOWY</div>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div style="flex: 1; text-align: center; font-weight: bold; font-size: 1.6em; color: #2ecc71;">2</div>
+                            <div style="flex: 1; text-align: center; font-size: 1.1em; color: #bbb;">SETY</div>
+                            <div style="flex: 1; text-align: center; font-weight: bold; font-size: 1.6em; color: #e74c3c;">0</div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="flex: 1; text-align: center; font-weight: bold;">6</div>
+                            <div style="flex: 1; text-align: center; color: #bbb;">SET 1</div>
+                            <div style="flex: 1; text-align: center; font-weight: bold;">6</div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="flex: 1; text-align: center; font-weight: bold;">4</div>
+                            <div style="flex: 1; text-align: center; color: #bbb;">SET 2</div>
+                            <div style="flex: 1; text-align: center; font-weight: bold;">6</div>
+                        </div>
+                    </div>
                     
                     <div class="probability-container">
                         <div class="probability-item">
