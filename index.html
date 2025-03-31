@@ -239,28 +239,30 @@
                 </div>
                 
                 <!-- Statystyki ATP Marrakech -->
-                <div style="background-color: rgba(255, 255, 255, 0.05); border-radius: 10px; padding: 20px; flex: 1; min-width: 250px;">
-                    <div style="text-align: center; margin-bottom: 15px;">
-                        <h3 style="margin: 0; color: #d35400;">ATP Marrakech 2025</h3>
-                        <p style="color: #888; margin-top: 5px;">Kwalifikacje R1</p>
-                    </div>
-                    
-                    <div style="display: flex; justify-content: center; align-items: center;">
-                        <div style="position: relative; width: 120px; height: 120px;">
-                            <svg width="120" height="120" viewBox="0 0 120 120">
-                                <circle cx="60" cy="60" r="54" fill="none" stroke="#2c3e50" stroke-width="12" />
-                                <circle cx="60" cy="60" r="54" fill="none" stroke="#2ecc71" stroke-width="12" stroke-dasharray="339.3" stroke-dashoffset="42.41" />
-                            </svg>
-                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 1.8em; font-weight: bold; color: #fff;">87.5%</div>
+                <div class="stat-box">
+                    <h3>ATP Marrakech</h3>
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <div class="stat-circle">
+                                <svg viewBox="0 0 36 36">
+                                    <path class="circle-bg" d="M18 2.0845
+                                        a 15.9155 15.9155 0 0 1 0 31.831
+                                        a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    <path class="circle" stroke-dasharray="75, 100" d="M18 2.0845
+                                        a 15.9155 15.9155 0 0 1 0 31.831
+                                        a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    <text x="18" y="20.35" class="percentage">75%</text>
+                                </svg>
+                            </div>
+                            <div class="stat-label">Trafione prognozy</div>
                         </div>
-                        
-                        <div style="margin-left: 20px;">
-                            <div style="margin-bottom: 10px;">
-                                <span style="color: #2ecc71; font-weight: bold;">7</span> <span style="color: #bbb;">trafnych</span>
-                            </div>
-                            <div>
-                                <span style="color: #e74c3c; font-weight: bold;">1</span> <span style="color: #bbb;">nietrafnych</span>
-                            </div>
+                        <div class="stat-item">
+                            <div class="stat-number">3/4</div>
+                            <div class="stat-label">Trafienie finałów kwalifikacji</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Trafienie pewnych faworytów (>60%)</div>
                         </div>
                     </div>
                 </div>
