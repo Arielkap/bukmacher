@@ -1,0 +1,24 @@
+{
+    "generated_at": "2026-09-17T09:31:34.670001",
+    "strategy": "Automatyczny selektor value betów WTA",
+    "concrete_tips": [
+        {
+            "tournament": "WTA 500 / 1000",
+            "player_1": "Iga Świątek",
+            "player_2": "Aryna Sabalenka",
+            "surface": "Hard",
+            "prediction": "Iga Świątek (2:0 w setach)",
+            "confidence": "Wysoka",
+            "odds_approx": 1.72
+        },
+        {
+            "tournament": "WTA Tour",
+            "player_1": "Elena Rybakina",
+            "player_2": "Coco Gauff",
+            "surface": "Hard",
+            "prediction": "Elena Rybakina (powyżej 21.5 gemów)",
+            "confidence": "Średnia",
+            "odds_approx": 1.95
+        }
+    ]
+}

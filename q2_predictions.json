@@ -1,0 +1,98 @@
+[
+    {
+        "matchup": "Anastasia Zakharova vs Linda Fruhvirtova",
+        "winner": "Anastasia Zakharova",
+        "confidence": "3.2%",
+        "p1_prob": "51.6%",
+        "p2_prob": "48.4%",
+        "insight": "Ranking class"
+    },
+    {
+        "matchup": "Lulu Sun vs Diane Parry",
+        "winner": "Diane Parry",
+        "confidence": "13.9%",
+        "p1_prob": "43.0%",
+        "p2_prob": "57.0%",
+        "insight": "Ranking class"
+    },
+    {
+        "matchup": "Kamilla Rakhimova vs Maria Timofeeva",
+        "winner": "Kamilla Rakhimova",
+        "confidence": "5.5%",
+        "p1_prob": "52.7%",
+        "p2_prob": "47.3%",
+        "insight": "Slow court bonus"
+    },
+    {
+        "matchup": "Darja Semenistaja vs Kayla Day",
+        "winner": "Darja Semenistaja",
+        "confidence": "1.1%",
+        "p1_prob": "50.6%",
+        "p2_prob": "49.4%",
+        "insight": "Ranking class"
+    },
+    {
+        "matchup": "Elvina Kalieva vs Talia Gibson",
+        "winner": "Elvina Kalieva",
+        "confidence": "4.9%",
+        "p1_prob": "52.4%",
+        "p2_prob": "47.6%",
+        "insight": "Ranking class"
+    },
+    {
+        "matchup": "Marina Stakusic vs Mananchaya Sawangkaew",
+        "winner": "Marina Stakusic",
+        "confidence": "4.8%",
+        "p1_prob": "52.4%",
+        "p2_prob": "47.6%",
+        "insight": "Ranking class"
+    },
+    {
+        "matchup": "Himeno Sakatsume vs Nikola Bartunkova",
+        "winner": "Nikola Bartunkova",
+        "confidence": "12.9%",
+        "p1_prob": "43.5%",
+        "p2_prob": "56.5%",
+        "insight": "Slow court bonus"
+    },
+    {
+        "matchup": "Dalma Galfi vs Lanlana Tararudee",
+        "winner": "Lanlana Tararudee",
+        "confidence": "16.3%",
+        "p1_prob": "41.8%",
+        "p2_prob": "58.2%",
+        "insight": "Slow court bonus"
+    },
+    {
+        "matchup": "Storm Sanders vs Leolia Jeanjean",
+        "winner": "Leolia Jeanjean",
+        "confidence": "9.9%",
+        "p1_prob": "45.1%",
+        "p2_prob": "54.9%",
+        "insight": "Slow court bonus"
+    },
+    {
+        "matchup": "Priscilla Hon vs Darja Vidmanova",
+        "winner": "Darja Vidmanova",
+        "confidence": "3.2%",
+        "p1_prob": "48.4%",
+        "p2_prob": "51.6%",
+        "insight": "Ranking class"
+    },
+    {
+        "matchup": "Katie Boulter vs Victoria Jimenez Kasintseva",
+        "winner": "Katie Boulter",
+        "confidence": "58.2%",
+        "p1_prob": "79.1%",
+        "p2_prob": "20.9%",
+        "insight": "Ranking class"
+    },
+    {
+        "matchup": "Akasha Urhobo vs Taylor Townsend",
+        "winner": "Taylor Townsend",
+        "confidence": "48.0%",
+        "p1_prob": "26.0%",
+        "p2_prob": "74.0%",
+        "insight": "Ranking class"
+    }
+]

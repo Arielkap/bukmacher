@@ -1,0 +1,13 @@
+{
+    "sport": "Tennis (WTA)",
+    "bookmaker": "Betclic",
+    "schedule_mode": "Daily automated fetch",
+    "timing_rules": {
+        "evening_matches": "Send tips 2 hours before start",
+        "night_matches": "Send tips in the evening beforehand so user can place bets"
+    },
+    "feedback_loop": "User reports win/loss to train/adjust agent expectations",
+    "updated_at": "2026-09-17T09:33:46.680943",
+    "matches_per_day_limit": 3,
+    "continuous_analysis": true
+}

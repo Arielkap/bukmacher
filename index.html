@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analizy Tenisowe 2025</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: #1e2a3a;
+            padding: 30px 0;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            color: #888;
+            margin-top: 10px;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .nav-tabs {
+            display: flex;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .nav-tab {
+            padding: 12px 25px;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-tab:last-child {
+            border-right: none;
+        }
+        
+        .nav-tab:hover {
+            background-color: rgba(211, 84, 0, 0.5);
+        }
+        
+        .nav-tab.active {
+            background-color: #d35400;
+        }
+        
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .card {
+            background-color: #1e2a3a;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.4);
+        }
+        
+        .card-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .card:hover .card-image img {
+            transform: scale(1.1);
+        }
+        
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.8));
+        }
+        
+        .card-content {
+            padding: 20px;
+        }
+        
+        .card-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        
+        .card-description {
+            color: #bbb;
+            margin-bottom: 20px;
+        }
+        
+        .card-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #d35400;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .card-link:hover {
+            background-color: #e67e22;
+        }
+        
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .date-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-tabs {
+                flex-direction: column;
+            }
+            
+            .nav-tab {
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Bukmacher</h1>
+            <h2>Profesjonalne predykcje tenisowe</h2>
+        </header>
+        
+        <div class="statistics">
+            <h3>Ostatnia aktualizacja: 04.04.2025</h3>
+            <div class="stats-container">
+                <div class="stat">
+                    <span class="value">76%</span>
+                    <span class="label">Skuteczność</span>
+                </div>
+                <div class="stat">
+                    <span class="value">+156.4</span>
+                    <span class="label">Jednostki zysku</span>
+                </div>
+                <div class="stat">
+                    <span class="value">223</span>
+                    <span class="label">Liczba predykcji</span>
+                </div>
+                <div class="stat">
+                    <span class="value">1.86</span>
+                    <span class="label">Średni kurs</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="tournaments">
+                <h3>Analizowane turnieje</h3>
+                <div class="tournament-list">
+                    <a href="charleston_main_draw.html" class="tournament-item active">
+                        <div class="tournament-name">WTA Charleston</div>
+                        <div class="tournament-date">31.03 - 07.04.2025</div>
+                        <div class="tournament-surface surface-clay">Mączka</div>
+                    </a>
+                    <a href="#" class="tournament-item">
+                        <div class="tournament-name">ATP Monte Carlo</div>
+                        <div class="tournament-date">07.04 - 14.04.2025</div>
+                        <div class="tournament-surface surface-clay">Mączka</div>
+                    </a>
+                    <a href="#" class="tournament-item">
+                        <div class="tournament-name">WTA Stuttgart</div>
+                        <div class="tournament-date">14.04 - 21.04.2025</div>
+                        <div class="tournament-surface surface-clay-indoor">Mączka (hala)</div>
+                    </a>
+                    <a href="#" class="tournament-item">
+                        <div class="tournament-name">ATP Barcelona</div>
+                        <div class="tournament-date">14.04 - 21.04.2025</div>
+                        <div class="tournament-surface surface-clay">Mączka</div>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="info-section">
+                <h3>O projekcie</h3>
+                <p>Bukmacher to projekt zaawansowanych predykcji meczów tenisowych opartych na szczegółowej analizie danych historycznych, statystyk zawodników i wielu czynników specyficznych dla każdego meczu.</p>
+                <p>Każda predykcja zawiera nie tylko typ zakładu, ale również szczegółowe uzasadnienie oparte na danych i analizie tenisowej.</p>
+                <h4>Stosowana metodologia:</h4>
+                <ul>
+                    <li>Analiza historii bezpośrednich pojedynków (H2H)</li>
+                    <li>Skuteczność zawodników na poszczególnych nawierzchniach</li>
+                    <li>Forma bieżąca i wyniki z ostatnich turniejów</li>
+                    <li>Style gry i ich dopasowanie do warunków turnieju</li>
+                    <li>Czynniki zewnętrzne (warunki atmosferyczne, zmęczenie, etc.)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="cards-container">
+            <!-- Karta 1 - WTA Charleston -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="WTA Charleston">
+                    <div class="card-overlay"></div>
+                    <div class="date-badge">30.03.2025</div>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">WTA Charleston 2025</h2>
+                    <p class="card-description">Szczegółowe prognozy i analizy meczów kwalifikacyjnych turnieju WTA 500 w Charleston. Sprawdź faworytki i szanse na awans.</p>
+                    <a href="predictions.html" class="card-link">Zobacz analizę</a>
+                </div>
+            </div>
+            
+            <!-- Karta 2 - WTA Charleston Main Draw -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://www.tennistonic.com/wp-content/uploads/2023/04/Volvo-Car-Open-2023-WTA-500-Charleston-Clay-FEATURED.jpg" alt="WTA Charleston Main Draw">
+                    <div class="card-overlay"></div>
+                    <div class="date-badge">31.03.2025</div>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">WTA Charleston - Turniej Główny</h2>
+                    <p class="card-description">Analizy meczów pierwszej rundy turnieju głównego WTA 500 w Charleston. Sprawdź faworytki, kluczowe mecze i potencjalne niespodzianki.</p>
+                    <a href="charleston_main_draw.html" class="card-link">Zobacz analizę</a>
+                </div>
+            </div>
+            
+            <!-- Karta 3 - ATP Marrakech -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://www.tennisworldusa.org/imgb/122222/charleston-open-2024-where-to-watch-and-stream-the-wta-500-tournament-for-free.webp" alt="ATP Marrakech">
+                    <div class="card-overlay"></div>
+                    <div class="date-badge">30.03.2025</div>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">ATP Marrakech 2025</h2>
+                    <p class="card-description">Kwalifikacje do turnieju ATP 250 w Marrakeszu. Sprawdź analizy meczów, statystyki zawodników i szanse na zwycięstwo.</p>
+                    <a href="marrakech_atp_qualifications.html" class="card-link">Zobacz analizę</a>
+                </div>
+            </div>
+            
+            <!-- Karta 4 - Wytyczne -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://img.freepik.com/free-photo/tennis-balls-white-line-clay-court_93675-128124.jpg" alt="Wytyczne Analityczne">
+                    <div class="card-overlay"></div>
+                    <div class="date-badge">30.03.2025</div>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">Wytyczne Analityczne</h2>
+                    <p class="card-description">Kompletny przewodnik metodologii analizy meczów tenisowych. Poznaj kluczowe czynniki i techniki profesjonalnych analityków.</p>
+                    <a href="tennis_analysis_guidelines.html" class="card-link">Zobacz wytyczne</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 Profesjonalne Analizy Tenisowe</p>
+            <p>Wygenerowano: 04.04.2025</p>
+            <div style="margin-top: 15px; background-color: rgba(255, 255, 255, 0.05); padding: 8px 15px; border-radius: 5px; display: inline-block;">
+                <span style="font-weight: bold; color: #2ecc71;">14,782</span>
+                <span style="color: #bbb; margin-left: 5px;">odwiedzających</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

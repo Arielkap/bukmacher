@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WTA Charleston 2025 - Turniej Główny</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            padding: 30px 0;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            color: #888;
+            margin-top: 10px;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        .nav-tabs {
+            display: flex;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .nav-tab {
+            padding: 12px 25px;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-tab:last-child {
+            border-right: none;
+        }
+        
+        .nav-tab:hover {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+        }
+        
+        .nav-tab.active {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+        }
+        
+        .match-card {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .match-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
+        
+        .match-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 15px;
+        }
+        
+        .match-time {
+            font-weight: bold;
+            color: #e74c3c;
+            background: linear-gradient(135deg, rgba(231, 76, 60, 0.2) 0%, rgba(192, 57, 43, 0.2) 100%);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        
+        .match-round {
+            color: #888;
+            font-size: 0.9em;
+        }
+        
+        .player-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .player {
+            flex: 1;
+            padding: 15px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .player.favorite {
+            background: linear-gradient(135deg, rgba(46, 204, 113, 0.2) 0%, rgba(39, 174, 96, 0.2) 100%);
+            border: 1px solid #27ae60;
+        }
+        
+        .player-name {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        
+        .player-name.favorite {
+            color: #2ecc71;
+        }
+        
+        .player-stats {
+            text-align: left;
+            font-size: 0.9em;
+            color: #bbb;
+        }
+        
+        .vs {
+            margin: 0 15px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #888;
+        }
+        
+        .match-stats {
+            display: flex;
+            justify-content: space-between;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-label {
+            font-size: 0.8em;
+            color: #888;
+            margin-bottom: 5px;
+        }
+        
+        .stat-value {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        .prediction-container {
+            margin-top: 20px;
+            padding: 15px;
+            background: linear-gradient(135deg, rgba(231, 76, 60, 0.1) 0%, rgba(192, 57, 43, 0.1) 100%);
+            border-radius: 8px;
+            border-left: 4px solid #e74c3c;
+        }
+        
+        .prediction-header {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 10px;
+        }
+        
+        .prediction-text {
+            color: #ddd;
+            line-height: 1.5;
+        }
+        
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .probability-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .probability-item {
+            flex: 1;
+            padding: 8px;
+            position: relative;
+        }
+        
+        .probability-value {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .probability-bar {
+            height: 6px;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            border-radius: 3px;
+            overflow: hidden;
+            margin-top: 5px;
+        }
+        
+        .probability-fill {
+            height: 100%;
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+        }
+        
+        .probability-fill.favorite {
+            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+        }
+        
+        .surface-container {
+            background: linear-gradient(135deg, rgba(231, 76, 60, 0.1) 0%, rgba(192, 57, 43, 0.1) 100%);
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 20px;
+            border: 1px solid rgba(231, 76, 60, 0.2);
+        }
+        
+        .surface-type {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        
+        .tournament-info {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px 0;
+            padding: 15px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .info-item {
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .info-label {
+            display: block;
+            color: #888;
+            font-size: 0.8em;
+            margin-bottom: 5px;
+        }
+        
+        .info-value {
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        .surface-clay {
+            color: #e74c3c !important;
+        }
+        
+        .section-header {
+            margin: 40px 0 20px 0;
+            text-align: center;
+            color: #ffffff;
+            font-size: 1.8em;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e74c3c;
+        }
+        
+        .day-header {
+            background: linear-gradient(135deg, rgba(231, 76, 60, 0.2) 0%, rgba(192, 57, 43, 0.2) 100%);
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin: 30px 0 20px 0;
+            text-align: center;
+            color: #fff;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border: 1px solid rgba(231, 76, 60, 0.3);
+        }
+        
+        .result-container {
+            background: linear-gradient(135deg, rgba(46, 204, 113, 0.1) 0%, rgba(39, 174, 96, 0.1) 100%);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border: 1px solid rgba(46, 204, 113, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Pasek nawigacyjny -->
+        <div class="nav-container">
+            <div class="nav-tabs">
+                <a href="index.html" class="nav-tab">Strona Główna</a>
+                <a href="predictions.html" class="nav-tab">WTA Kwalifikacje</a>
+                <a href="charleston_main_draw.html" class="nav-tab active">WTA Turniej Główny</a>
+                <a href="marrakech_atp_qualifications.html" class="nav-tab">ATP Marrakech</a>
+                <a href="tennis_analysis_guidelines.html" class="nav-tab">Wytyczne</a>
+            </div>
+        </div>
+        
+        <header>
+            <h1>WTA Charleston 2025</h1>
+            <div class="subtitle">Turniej Główny - Analiza meczów</div>
+            
+            <div class="tournament-info">
+                <div class="info-item">
+                    <span class="info-label">TURNIEJ</span>
+                    <span class="info-value">WTA 500</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">MIEJSCE</span>
+                    <span class="info-value">Charleston, USA</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">NAWIERZCHNIA</span>
+                    <span class="info-value surface-clay">Ziemna</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">PULA NAGRÓD</span>
+                    <span class="info-value">$922,573</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">DATA</span>
+                    <span class="info-value">31.03-07.04.2025</span>
+                </div>
+            </div>
+        </header>
+        
+        <div class="day-header">
+            Czwartek/Piątek, 04-05.04.2025 - Ćwierćfinały
+        </div>
+        
+        <div class="matches-container">
+            <!-- Mecz 1: Pegula vs Collins -->
+            <div class="match-card">
+                <div class="match-header">
+                    <span class="match-time">04.04.2025 - 17:00</span>
+                    <span class="match-round">Ćwierćfinał</span>
+                </div>
+                <div class="match-content">
+                    <div class="player-container">
+                        <div class="player favorite">
+                            <div class="player-name favorite">Pegula J.</div>
+                            <div class="player-stats">
+                                <div>USA</div>
+                                <div>Ranking: #5</div>
+                                <div>Clay: 64-38 (62.7%)</div>
+                                <div>Rozstawienie: 1</div>
+                                <div>Forma: W W W W W</div>
+                            </div>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="player">
+                            <div class="player-name">Collins D.</div>
+                            <div class="player-stats">
+                                <div>USA</div>
+                                <div>Ranking: #15</div>
+                                <div>Clay: 54-38 (58.7%)</div>
+                                <div>Rozstawienie: 5</div>
+                                <div>Forma: W W W W W</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="match-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">H2H</div>
+                            <div class="stat-value">3-1</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Kursy</div>
+                            <div class="stat-value">1.46 / 2.66</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Wiek</div>
+                            <div class="stat-value">30 / 30</div>
+                        </div>
+                    </div>
+                    
+                    <div class="probability-container">
+                        <div class="probability-item">
+                            <div class="probability-value">65%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill favorite" style="width: 65%"></div>
+                            </div>
+                        </div>
+                        <div class="probability-item">
+                            <div class="probability-value">35%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill" style="width: 35%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="prediction-container">
+                        <div class="prediction-header">Prognoza</div>
+                        <div class="prediction-text">
+                            Pegula jest faworytką tego spotkania. Jako najwyżej rozstawiona zawodniczka turnieju prezentuje stabilną formę i świetne wyniki na nawierzchni ziemnej. Jej bilans na mączce (62.7%) jest lepszy niż u Collins (58.7%). W bezpośrednich pojedynkach Pegula prowadzi 3-1. Obie zawodniczki są w znakomitej dyspozycji, wygrywając swoje ostatnie mecze, ale to Pegula dysponuje bardziej wszechstronnym arsenałem zagrań. Kursy bukmacherskie (1.46 vs 2.66) również wskazują na Pegulę jako faworytkę. Spodziewamy się zaciętego meczu, ale z przewagą dla wyżej notowanej Amerykanki.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mecz 2: Zheng vs Aleksandrowa -->
+            <div class="match-card">
+                <div class="match-header">
+                    <span class="match-time">04.04.2025 - 18:10</span>
+                    <span class="match-round">Ćwierćfinał</span>
+                </div>
+                <div class="match-content">
+                    <div class="player-container">
+                        <div class="player favorite">
+                            <div class="player-name favorite">Zheng Q.</div>
+                            <div class="player-stats">
+                                <div>Chiny</div>
+                                <div>Ranking: #7</div>
+                                <div>Clay: 47-26 (64.4%)</div>
+                                <div>Rozstawienie: 2</div>
+                                <div>Forma: W W W W W</div>
+                            </div>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="player">
+                            <div class="player-name">Aleksandrowa E.</div>
+                            <div class="player-stats">
+                                <div>Rosja</div>
+                                <div>Ranking: #38</div>
+                                <div>Clay: 97-68 (58.8%)</div>
+                                <div>Rozstawienie: -</div>
+                                <div>Forma: W W W W L</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="match-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">H2H</div>
+                            <div class="stat-value">2-0</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Kursy</div>
+                            <div class="stat-value">1.38 / 2.94</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Wiek</div>
+                            <div class="stat-value">21 / 29</div>
+                        </div>
+                    </div>
+                    
+                    <div class="probability-container">
+                        <div class="probability-item">
+                            <div class="probability-value">70%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill favorite" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="probability-item">
+                            <div class="probability-value">30%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill" style="width: 30%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="prediction-container">
+                        <div class="prediction-header">Prognoza</div>
+                        <div class="prediction-text">
+                            Zheng jest zdecydowaną faworytką tego spotkania. Chinka ma znacznie wyższy ranking, jest wyżej rozstawiona w turnieju i ma lepszy bilans na mączce (64.4%). Zheng pokazała już doskonałą formę w poprzednim meczu z Mertens, wygrywając 2-1. W bezpośrednich pojedynkach prowadzi 2-0, co tylko umacnia jej status faworytki. Aleksandrowa dobrze prezentuje się w tym turnieju, ale różnica w klasie jest zauważalna. Kursy bukmacherskie (1.38 vs 2.94) również wskazują na znaczną przewagę Chinki. Spodziewamy się zwycięstwa Zheng, prawdopodobnie w dwóch setach.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mecz 3: Kenin vs Kalinskaja -->
+            <div class="match-card">
+                <div class="match-header">
+                    <span class="match-time">04.04.2025 - 20:00</span>
+                    <span class="match-round">Ćwierćfinał</span>
+                </div>
+                <div class="match-content">
+                    <div class="player-container">
+                        <div class="player">
+                            <div class="player-name">Kenin S.</div>
+                            <div class="player-stats">
+                                <div>USA</div>
+                                <div>Ranking: #35</div>
+                                <div>Clay: 58-42 (58.0%)</div>
+                                <div>Rozstawienie: -</div>
+                                <div>Forma: W W L W W</div>
+                            </div>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="player favorite">
+                            <div class="player-name favorite">Kalinskaja A.</div>
+                            <div class="player-stats">
+                                <div>Rosja</div>
+                                <div>Ranking: #25</div>
+                                <div>Clay: 54-38 (58.7%)</div>
+                                <div>Rozstawienie: -</div>
+                                <div>Forma: W W W W L</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="match-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">H2H</div>
+                            <div class="stat-value">0-1</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Kursy</div>
+                            <div class="stat-value">1.84 / 1.93</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Wiek</div>
+                            <div class="stat-value">25 / 25</div>
+                        </div>
+                    </div>
+                    
+                    <div class="probability-container">
+                        <div class="probability-item">
+                            <div class="probability-value">45%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill" style="width: 45%"></div>
+                            </div>
+                        </div>
+                        <div class="probability-item">
+                            <div class="probability-value">55%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill favorite" style="width: 55%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="prediction-container">
+                        <div class="prediction-header">Prognoza</div>
+                        <div class="prediction-text">
+                            To spotkanie zapowiada się jako jeden z najbardziej wyrównanych meczów ćwierćfinałowych. Kalinskaja jest delikatną faworytką ze względu na wyższy ranking i imponujące zwycięstwo nad Keys w poprzedniej rundzie (2-0). Kenin wciąż wraca do najwyższej formy po kontuzji, ale w przeszłości wygrywała Wielkiego Szlema i ma duże doświadczenie. Bilans na mączce obu zawodniczek jest bardzo podobny, co dodatkowo podkreśla wyrównany charakter rywalizacji. Kalinskaja wygrała ich jedyne bezpośrednie spotkanie. Kursy bukmacherskie (1.84 vs 1.93) również wskazują na minimalną przewagę Rosjanki. Spodziewamy się zaciętego meczu, który prawdopodobnie zakończy się trzecim setem.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mecz 4: Anisimowa vs Navarro -->
+            <div class="match-card">
+                <div class="match-header">
+                    <span class="match-time">05.04.2025 - 00:00</span>
+                    <span class="match-round">Ćwierćfinał</span>
+                </div>
+                <div class="match-content">
+                    <div class="player-container">
+                        <div class="player">
+                            <div class="player-name">Anisimowa A.</div>
+                            <div class="player-stats">
+                                <div>USA</div>
+                                <div>Ranking: #45</div>
+                                <div>Clay: 69-42 (62.2%)</div>
+                                <div>Rozstawienie: -</div>
+                                <div>Forma: W W W W L</div>
+                            </div>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="player favorite">
+                            <div class="player-name favorite">Navarro E.</div>
+                            <div class="player-stats">
+                                <div>USA</div>
+                                <div>Ranking: #30</div>
+                                <div>Clay: 37-22 (62.7%)</div>
+                                <div>Rozstawienie: 7</div>
+                                <div>Forma: W W W W L</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="match-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">H2H</div>
+                            <div class="stat-value">0-1</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Kursy</div>
+                            <div class="stat-value">1.77 / 2.00</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Wiek</div>
+                            <div class="stat-value">22 / 23</div>
+                        </div>
+                    </div>
+                    
+                    <div class="probability-container">
+                        <div class="probability-item">
+                            <div class="probability-value">45%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill" style="width: 45%"></div>
+                            </div>
+                        </div>
+                        <div class="probability-item">
+                            <div class="probability-value">55%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill favorite" style="width: 55%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="prediction-container">
+                        <div class="prediction-header">Prognoza</div>
+                        <div class="prediction-text">
+                            Navarro jest faworytką tego pojedynku ze względu na wyższy ranking i rozstawienie w turnieju. Obie zawodniczki prezentują podobny bilans na mączce i dobrą formę w ostatnich meczach. Navarro udowodniła swoją klasę, wygrywając z Krueger 2-1 w pierwszej rundzie, pokazując dużą determinację. Anisimowa również prezentuje dobrą formę, ale jej ostatnie wyniki są nieco mniej stabilne. W ich jedynym bezpośrednim pojedynku wygrała Navarro. Kursy bukmacherskie (1.77 vs 2.00) wskazują na delikatną przewagę Anisimowej, co stoi w sprzeczności z naszą analizą, która faworyzuje Navarro ze względu na wyższy ranking i rozstawienie. Spodziewamy się wyrównanego meczu z minimalną przewagą dla Navarro.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="day-header">
+            Poniedziałek, 31.03.2025 - Pierwsza runda
+        </div>
+        
+        <div class="matches-container">
+            <!-- Mecz 1: Anisimova vs Putintseva -->
+            <div class="match-card">
+                <div class="match-header">
+                    <span class="match-time">Koniec</span>
+                    <span class="match-round">Pierwsza runda</span>
+                </div>
+                <div class="match-content">
+                    <div class="player-container">
+                        <div class="player favorite">
+                            <div class="player-name favorite">Anisimowa A.</div>
+                            <div class="player-stats">
+                                <div>USA</div>
+                                <div>Ranking: #45</div>
+                                <div>Clay: 68-42 (61.8%)</div>
+                                <div>Rozstawienie: -</div>
+                                <div>Forma: W W W L W</div>
+                            </div>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="player">
+                            <div class="player-name">Putincewa J.</div>
+                            <div class="player-stats">
+                                <div>Kazachstan</div>
+                                <div>Ranking: #52</div>
+                                <div>Clay: 145-98 (59.7%)</div>
+                                <div>Rozstawienie: -</div>
+                                <div>Forma: W L W W L</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="match-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">H2H</div>
+                            <div class="stat-value">2-1</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Kursy</div>
+                            <div class="stat-value">1.42 / 2.93</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Wiek</div>
+                            <div class="stat-value">22 / 29</div>
+                        </div>
+                    </div>
+                    
+                    <div class="probability-container">
+                        <div class="probability-item">
+                            <div class="probability-value">70%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill favorite" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="probability-item">
+                            <div class="probability-value">30%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill" style="width: 30%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="prediction-container">
+                        <div class="prediction-header">Prognoza</div>
+                        <div class="prediction-text">
+                            Anisimova jest faworytką tego spotkania. Amerykanka ma nieznacznie wyższy ranking i lepszą formę (4 zwycięstwa w 5 ostatnich meczach). Putintseva ma większe doświadczenie na mączce, ale jej forma jest mniej stabilna (3 zwycięstwa w 5 ostatnich meczach). W ich bezpośrednich spotkaniach Anisimova prowadzi 2-1. Kursy bukmacherskie (1.42 vs 2.93) potwierdzają status faworytki dla Anisimovej. Spodziewamy się zaciętego meczu, ale z przewagą dla młodszej Amerykanki.
+                        </div>
+                    </div>
+                    
+                    <div class="result-container">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div style="flex: 1; text-align: center; font-weight: bold; color: #2ecc71;">2</div>
+                            <div style="flex: 1; text-align: center; font-weight: bold;">0</div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="flex: 1; text-align: center;">6</div>
+                            <div style="flex: 1; text-align: center;">4</div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 5px;">
+                            <div style="flex: 1; text-align: center;">6</div>
+                            <div style="flex: 1; text-align: center;">4</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mecz 2: Alexandrova vs Shnaider -->
+            <div class="match-card">
+                <div class="match-header">
+                    <span class="match-time">Koniec</span>
+                    <span class="match-round">Pierwsza runda</span>
+                </div>
+                <div class="match-content">
+                    <div class="player-container">
+                        <div class="player favorite">
+                            <div class="player-name favorite">Aleksandrowa J.</div>
+                            <div class="player-stats">
+                                <div>Rosja</div>
+                                <div>Ranking: #38</div>
+                                <div>Clay: 95-68 (58.3%)</div>
+                                <div>Rozstawienie: -</div>
+                                <div>Forma: W W L W W</div>
+                            </div>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="player">
+                            <div class="player-name">Sznajder D.</div>
+                            <div class="player-stats">
+                                <div>Rosja</div>
+                                <div>Ranking: #85</div>
+                                <div>Clay: 42-28 (60.0%)</div>
+                                <div>Rozstawienie: -</div>
+                                <div>Forma: W L W W L</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="match-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">H2H</div>
+                            <div class="stat-value">0-0</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Kursy</div>
+                            <div class="stat-value">1.65 / 2.25</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Wiek</div>
+                            <div class="stat-value">29 / 20</div>
+                        </div>
+                    </div>
+                    
+                    <div class="probability-container">
+                        <div class="probability-item">
+                            <div class="probability-value">65%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill favorite" style="width: 65%"></div>
+                            </div>
+                        </div>
+                        <div class="probability-item">
+                            <div class="probability-value">35%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill" style="width: 35%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="prediction-container">
+                        <div class="prediction-header">Prognoza</div>
+                        <div class="prediction-text">
+                            Alexandrova jest faworytką w tym spotkaniu ze względu na wyższy ranking i stabilniejszą formę. W ostatnich 5 meczach zanotowała 4 zwycięstwa. Mimo, że Shnaider ma dobry bilans na mączce (60.0%), brak jej jeszcze doświadczenia na tym poziomie rywalizacji. Zawodniczki nie grały jeszcze przeciwko sobie, co wprowadza pewną niepewność do prognozy. Kursy bukmacherskie (1.65 vs 2.25) również wskazują na Alexandrovą jako faworytkę. Spodziewamy się zwycięstwa bardziej doświadczonej zawodniczki.
+                        </div>
+                    </div>
+                    
+                    <div class="result-container">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div style="flex: 1; text-align: center; font-weight: bold; color: #2ecc71;">2</div>
+                            <div style="flex: 1; text-align: center; font-weight: bold;">0</div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="flex: 1; text-align: center;">6</div>
+                            <div style="flex: 1; text-align: center;">2</div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 5px;">
+                            <div style="flex: 1; text-align: center;">6</div>
+                            <div style="flex: 1; text-align: center;">1</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mecz 3: Krueger vs Navarro -->
+            <div class="match-card">
+                <div class="match-header">
+                    <span class="match-time">Koniec</span>
+                    <span class="match-round">Pierwsza runda</span>
+                </div>
+                <div class="match-content">
+                    <div class="player-container">
+                        <div class="player">
+                            <div class="player-name">Krueger A.</div>
+                            <div class="player-stats">
+                                <div>USA</div>
+                                <div>Ranking: #118</div>
+                                <div>Clay: 42-38 (52.5%)</div>
+                                <div>Rozstawienie: -</div>
+                                <div>Forma: L W L W W</div>
+                            </div>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="player favorite">
+                            <div class="player-name favorite">Navarro E.</div>
+                            <div class="player-stats">
+                                <div>USA</div>
+                                <div>Ranking: #30</div>
+                                <div>Clay: 35-22 (61.4%)</div>
+                                <div>Rozstawienie: 7</div>
+                                <div>Forma: W W W W L</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="match-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">H2H</div>
+                            <div class="stat-value">0-1</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Kursy</div>
+                            <div class="stat-value">5.80 / 1.14</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Wiek</div>
+                            <div class="stat-value">30 / 23</div>
+                        </div>
+                    </div>
+                    
+                    <div class="probability-container">
+                        <div class="probability-item">
+                            <div class="probability-value">25%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill" style="width: 25%"></div>
+                            </div>
+                        </div>
+                        <div class="probability-item">
+                            <div class="probability-value">75%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill favorite" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="prediction-container">
+                        <div class="prediction-header">Prognoza</div>
+                        <div class="prediction-text">
+                            Navarro jest zdecydowaną faworytką tego spotkania. Ma znacznie wyższy ranking, jest rozstawiona w turnieju i ma lepszy bilans na nawierzchni ziemnej. Forma Navarro jest również imponująca (4 zwycięstwa w 5 ostatnich meczach). Krueger będzie musiała wznieść się na wyżyny swoich możliwości, aby zagrozić wyżej notowanej rodaczce. W ich jedynym dotychczasowym spotkaniu wygrała Navarro, co tylko potwierdza jej przewagę.
+                        </div>
+                    </div>
+                    
+                    <div class="result-container">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div style="flex: 1; text-align: center; font-weight: bold;">1</div>
+                            <div style="flex: 1; text-align: center; font-weight: bold; color: #2ecc71;">2</div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="flex: 1; text-align: center;">6</div>
+                            <div style="flex: 1; text-align: center;">4</div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 5px;">
+                            <div style="flex: 1; text-align: center;">4</div>
+                            <div style="flex: 1; text-align: center;">6</div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 5px;">
+                            <div style="flex: 1; text-align: center;">2</div>
+                            <div style="flex: 1; text-align: center;">6</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mecz 4: Ostapenko vs Collins -->
+            <div class="match-card">
+                <div class="match-header">
+                    <span class="match-time">Koniec</span>
+                    <span class="match-round">Pierwsza runda</span>
+                </div>
+                <div class="match-content">
+                    <div class="player-container">
+                        <div class="player">
+                            <div class="player-name">Ostapenko J.</div>
+                            <div class="player-stats">
+                                <div>Łotwa</div>
+                                <div>Ranking: #12</div>
+                                <div>Clay: 88-65 (57.5%)</div>
+                                <div>Rozstawienie: 3</div>
+                                <div>Forma: L L W L W</div>
+                            </div>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="player favorite">
+                            <div class="player-name favorite">Collins D.</div>
+                            <div class="player-stats">
+                                <div>USA</div>
+                                <div>Ranking: #15</div>
+                                <div>Clay: 52-38 (57.8%)</div>
+                                <div>Rozstawienie: 5</div>
+                                <div>Forma: W W W W W</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="match-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">H2H</div>
+                            <div class="stat-value">1-3</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Kursy</div>
+                            <div class="stat-value">2.10 / 1.72</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Wiek</div>
+                            <div class="stat-value">26 / 30</div>
+                        </div>
+                    </div>
+                    
+                    <div class="probability-container">
+                        <div class="probability-item">
+                            <div class="probability-value">45%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill" style="width: 45%"></div>
+                            </div>
+                        </div>
+                        <div class="probability-item">
+                            <div class="probability-value">55%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill favorite" style="width: 55%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="prediction-container">
+                        <div class="prediction-header">Prognoza</div>
+                        <div class="prediction-text">
+                            To spotkanie zapowiada się jako jeden z najbardziej zaciętych meczów pierwszej rundy. Collins jest w fenomenalnej formie (5 zwycięstw z rzędu), podczas gdy Ostapenko ma bardziej zmienną formę (tylko 2 zwycięstwa w 5 ostatnich meczach). Bilans bezpośrednich pojedynków (1-3) przemawia na korzyść Collins, mimo że Ostapenko ma wyższy ranking i wyższe rozstawienie. Kursy bukmacherskie również wskazują na Collins jako delikatną faworytkę. Spodziewamy się zaciętego meczu, który może zakończyć się trzecim setem.
+                        </div>
+                    </div>
+                    
+                    <div class="result-container">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div style="flex: 1; text-align: center; font-weight: bold;">0</div>
+                            <div style="flex: 1; text-align: center; font-weight: bold; color: #2ecc71;">2</div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="flex: 1; text-align: center;">5</div>
+                            <div style="flex: 1; text-align: center;">7</div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 5px;">
+                            <div style="flex: 1; text-align: center;">3</div>
+                            <div style="flex: 1; text-align: center;">6</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mecz 5: Pegula vs Tomljanovic -->
+            <div class="match-card">
+                <div class="match-header">
+                    <span class="match-time">Koniec</span>
+                    <span class="match-round">Pierwsza runda</span>
+                </div>
+                <div class="match-content">
+                    <div class="player-container">
+                        <div class="player favorite">
+                            <div class="player-name favorite">Pegula J.</div>
+                            <div class="player-stats">
+                                <div>USA</div>
+                                <div>Ranking: #5</div>
+                                <div>Clay: 62-38 (62.0%)</div>
+                                <div>Rozstawienie: 1</div>
+                                <div>Forma: W W W L W</div>
+                            </div>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="player">
+                            <div class="player-name">Tomljanovic A.</div>
+                            <div class="player-stats">
+                                <div>Australia</div>
+                                <div>Ranking: #118</div>
+                                <div>Clay: 89-78 (53.3%)</div>
+                                <div>Rozstawienie: -</div>
+                                <div>Forma: L W L W L</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="match-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">H2H</div>
+                            <div class="stat-value">2-0</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Kursy</div>
+                            <div class="stat-value">1.15 / 5.50</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Wiek</div>
+                            <div class="stat-value">30 / 31</div>
+                        </div>
+                    </div>
+                    
+                    <div class="probability-container">
+                        <div class="probability-item">
+                            <div class="probability-value">80%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill favorite" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="probability-item">
+                            <div class="probability-value">20%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill" style="width: 20%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="prediction-container">
+                        <div class="prediction-header">Prognoza</div>
+                        <div class="prediction-text">
+                            Pegula jest zdecydowaną faworytką tego spotkania. Jako najwyżej rozstawiona zawodniczka w turnieju i z rankingiem w TOP5, ma wszystkie atuty po swojej stronie. Pegula ma znacznie lepszy bilans na mączce (62.0%) i zdecydowanie lepszą formę (4 zwycięstwa w 5 ostatnich meczach). Dodatkowo, Pegula wygrała oba dotychczasowe spotkania z Tomljanovic. Kursy bukmacherskie (1.15 vs 5.50) również jednoznacznie wskazują na Amerykankę jako faworytkę.
+                        </div>
+                    </div>
+                    
+                    <div class="result-container">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div style="flex: 1; text-align: center; font-weight: bold; color: #2ecc71;">2</div>
+                            <div style="flex: 1; text-align: center; font-weight: bold;">0</div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="flex: 1; text-align: center;">6</div>
+                            <div style="flex: 1; text-align: center;">3</div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 5px;">
+                            <div style="flex: 1; text-align: center;">6</div>
+                            <div style="flex: 1; text-align: center;">2</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mecz 6: Graczowa vs Mertens -->
+            <div class="match-card">
+                <div class="match-header">
+                    <span class="match-time">Koniec</span>
+                    <span class="match-round">Pierwsza runda</span>
+                </div>
+                <div class="match-content">
+                    <div class="player-container">
+                        <div class="player">
+                            <div class="player-name">Graczowa W.</div>
+                            <div class="player-stats">
+                                <div>Rosja</div>
+                                <div>Ranking: #42</div>
+                                <div>Clay: 68-52 (56.7%)</div>
+                                <div>Rozstawienie: -</div>
+                                <div>Forma: L W L W L</div>
+                            </div>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="player favorite">
+                            <div class="player-name favorite">Mertens E.</div>
+                            <div class="player-stats">
+                                <div>Belgia</div>
+                                <div>Ranking: #28</div>
+                                <div>Clay: 72-48 (60.0%)</div>
+                                <div>Rozstawienie: 8</div>
+                                <div>Forma: W W L W W</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="match-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">H2H</div>
+                            <div class="stat-value">1-2</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Kursy</div>
+                            <div class="stat-value">2.30 / 1.65</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Wiek</div>
+                            <div class="stat-value">23 / 28</div>
+                        </div>
+                    </div>
+                    
+                    <div class="probability-container">
+                        <div class="probability-item">
+                            <div class="probability-value">35%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill" style="width: 35%"></div>
+                            </div>
+                        </div>
+                        <div class="probability-item">
+                            <div class="probability-value">65%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill favorite" style="width: 65%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="prediction-container">
+                        <div class="prediction-header">Prognoza</div>
+                        <div class="prediction-text">
+                            Mertens jest faworytką tego spotkania. Belgijka ma wyższy ranking, jest rozstawiona w turnieju i prezentuje lepszą formę (4 zwycięstwa w 5 ostatnich meczach). Mertens również ma lepszy bilans na mączce (60.0%). W bezpośrednich pojedynkach prowadzi 2-1. Kursy bukmacherskie (1.65 vs 2.30) również wskazują na Mertens jako faworytkę. Graczowa będzie musiała wznieść się na wyżyny swoich możliwości, aby pokonać Belgijkę.
+                        </div>
+                    </div>
+                    
+                    <div class="result-container">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div style="flex: 1; text-align: center; font-weight: bold;">0</div>
+                            <div style="flex: 1; text-align: center; font-weight: bold; color: #2ecc71;">2</div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="flex: 1; text-align: center;">3</div>
+                            <div style="flex: 1; text-align: center;">6</div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 5px;">
+                            <div style="flex: 1; text-align: center;">5</div>
+                            <div style="flex: 1; text-align: center;">7</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mecz 7: Zheng vs Mertens -->
+            <div class="match-card">
+                <div class="match-header">
+                    <span class="match-time">Koniec</span>
+                    <span class="match-round">Druga runda</span>
+                </div>
+                <div class="match-content">
+                    <div class="player-container">
+                        <div class="player favorite">
+                            <div class="player-name favorite">Zheng Q.</div>
+                            <div class="player-stats">
+                                <div>Chiny</div>
+                                <div>Ranking: #7</div>
+                                <div>Clay: 45-26 (63.4%)</div>
+                                <div>Rozstawienie: 2</div>
+                                <div>Forma: W W W L W</div>
+                            </div>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="player">
+                            <div class="player-name">Mertens E.</div>
+                            <div class="player-stats">
+                                <div>Belgia</div>
+                                <div>Ranking: #28</div>
+                                <div>Clay: 72-48 (60.0%)</div>
+                                <div>Rozstawienie: 8</div>
+                                <div>Forma: W W L W W</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="match-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">H2H</div>
+                            <div class="stat-value">1-1</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Kursy</div>
+                            <div class="stat-value">1.55 / 2.45</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Wiek</div>
+                            <div class="stat-value">21 / 28</div>
+                        </div>
+                    </div>
+                    
+                    <div class="probability-container">
+                        <div class="probability-item">
+                            <div class="probability-value">60%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill favorite" style="width: 60%"></div>
+                            </div>
+                        </div>
+                        <div class="probability-item">
+                            <div class="probability-value">40%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill" style="width: 40%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="prediction-container">
+                        <div class="prediction-header">Prognoza</div>
+                        <div class="prediction-text">
+                            Zheng jest faworytką tego spotkania. Chinka ma znacznie wyższy ranking, jest wyżej rozstawiona w turnieju i ma lepszy bilans na mączce (63.4%). Obie zawodniczki prezentują dobrą formę, ale to Zheng jest uważana za lepszą zawodniczkę, szczególnie na nawierzchni ziemnej. W bezpośrednich pojedynkach jest remis 1-1, co dodaje intrygi temu spotkaniu. Kursy bukmacherskie (1.55 vs 2.45) również wskazują na Chinkę jako faworytkę.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mecz 8: Kalinskaja vs Keys -->
+            <div class="match-card">
+                <div class="match-header">
+                    <span class="match-time">Koniec</span>
+                    <span class="match-round">Druga runda</span>
+                </div>
+                <div class="match-content">
+                    <div class="player-container">
+                        <div class="player favorite">
+                            <div class="player-name favorite">Kalinskaja A.</div>
+                            <div class="player-stats">
+                                <div>Rosja</div>
+                                <div>Ranking: #25</div>
+                                <div>Clay: 52-38 (57.8%)</div>
+                                <div>Rozstawienie: -</div>
+                                <div>Forma: W W W L W</div>
+                            </div>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="player">
+                            <div class="player-name">Keys M.</div>
+                            <div class="player-stats">
+                                <div>USA</div>
+                                <div>Ranking: #18</div>
+                                <div>Clay: 78-54 (59.1%)</div>
+                                <div>Rozstawienie: 6</div>
+                                <div>Forma: L W W L W</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="match-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">H2H</div>
+                            <div class="stat-value">1-0</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Kursy</div>
+                            <div class="stat-value">1.85 / 1.95</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Wiek</div>
+                            <div class="stat-value">25 / 29</div>
+                        </div>
+                    </div>
+                    
+                    <div class="probability-container">
+                        <div class="probability-item">
+                            <div class="probability-value">55%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill favorite" style="width: 55%"></div>
+                            </div>
+                        </div>
+                        <div class="probability-item">
+                            <div class="probability-value">45%</div>
+                            <div class="probability-bar">
+                                <div class="probability-fill" style="width: 45%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="prediction-container">
+                        <div class="prediction-header">Prognoza</div>
+                        <div class="prediction-text">
+                            To spotkanie zapowiada się jako jeden z najbardziej wyrównanych meczów turnieju. Kalinskaja jest w nieco lepszej formie (4 zwycięstwa w 5 ostatnich meczach), ale Keys ma wyższy ranking i jest rozstawiona w turnieju. Keys ma lepszy bilans na mączce (59.1%), ale Kalinskaja wygrała ich jedyne dotychczasowe spotkanie. Kursy bukmacherskie (1.85 vs 1.95) również wskazują na niemal równe szanse. Spodziewamy się zaciętego meczu, który może rozstrzygnąć się dopiero w trzecim secie.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 Profesjonalne Analizy Tenisowe</p>
+            <p>Data aktualizacji: 04.04.2025</p>
+        </div>
+    </div>
+</body>
+</html> 
